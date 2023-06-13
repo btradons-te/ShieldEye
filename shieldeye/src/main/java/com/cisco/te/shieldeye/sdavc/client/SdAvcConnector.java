@@ -109,6 +109,7 @@ public class SdAvcConnector extends HttpsUriConnectionTrustAllServers {
             throw new SdAvcClientException("Failed to login into SDAVC server", HTTPS_PROTOCOL,
                     getServerIP(), String.valueOf(dashboardPort));
         }
+		LOGGER.info("Successfully logged in SDAVC {}:{}", getServerIP(), dashboardPort);
         return sessionId;
     }
 

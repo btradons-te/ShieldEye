@@ -9,7 +9,7 @@ public class SdAvcServerDefaultLogin implements SdAvcServerLogin {
     private String sdAvcIp;
     private String userName;
     private String password;
-    private boolean enabled;
+    private boolean enabled = true;
     private int sdavcPort;
     private int serviceCacheAging;
 

@@ -97,6 +97,7 @@ public class SdAvcClient {
     <T> T httpGetAsType(SdAvcConnector sdavcConnector, String url, Class<T> classOfT) throws SdAvcClientException {
         T response = null;
         String bodyAsString = httpGetAsJson(sdavcConnector, url);
+        LOGGER.info("Recieved DCS devices respnse: {}", bodyAsString);
         try {
             Gson gson = new Gson();
             response = gson.fromJson(bodyAsString, (Type) classOfT);

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
+import org.codehaus.plexus.util.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,10 +19,10 @@ import com.cisco.te.shieldeye.sdavc.client.model.DetectedAnomaly;
 @Component
 public class SdavcSecurityService {
 
-	public static String SDAVC_SEVRVER_IP = "10.10.10.10";
+	public static String SDAVC_SEVRVER_IP = "10.56.198.128";
 	public static int SDAVC_PORT = SdAvcClientConstants.SDAVC_PORT;
-	public static String SDAVC_USER = "user";
-	public static String SDAVC_PASSWORD = "password";
+	public static String SDAVC_USER = "lab";
+	public static String SDAVC_PASSWORD = "lab";
 
 	@Autowired
 	private SdAvcClient sdAvcClient;
@@ -44,6 +45,7 @@ public class SdavcSecurityService {
 			sdAvclogin.setSdavcPort(SDAVC_PORT);
 			sdAvclogin.setUserName(SDAVC_USER);
 			sdAvclogin.setPassword(SDAVC_PASSWORD);
+			sdAvclogin.setEnabled(true);
 
 			// TODO replace method call to the getDcsDevices
 			List<DcsDevice> devices = sdAvcClient.getDcsDevices(sdAvclogin, segment, periodInMinutes);
@@ -67,7 +69,7 @@ public class SdavcSecurityService {
 			}
 			scanResponse.setTargetScanResult(scanResultsPerDevice.values());
 		} catch (Exception e) {
-			scanResponse.setStatus(e.toString());
+			scanResponse.setStatus(ExceptionUtils.getFullStackTrace(e));
 		}
 		return scanResponse;
 	}
