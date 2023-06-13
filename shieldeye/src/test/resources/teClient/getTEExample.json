@@ -1,0 +1,2866 @@
+{
+  "test": [
+    {
+      "createdDate": "2021-10-11 13:36:10",
+      "modifiedDate": "2023-05-30 08:54:58",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Asaf Rimon (arimon@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2314023,
+      "testName": "Network - TCP Agent to Agent",
+      "type": "agent-to-agent",
+      "interval": 60,
+      "subinterval": -1,
+      "port": 49153,
+      "protocol": "TCP",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "throughputMeasurements": 0,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 364036,
+      "throughputDuration": 10000,
+      "throughputRate": 64,
+      "mss": 200,
+      "direction": "BIDIRECTIONAL",
+      "continuousMode": 0,
+      "pathTraceMode": "inSession",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2314023"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2314023"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2314023"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2314023"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-11 13:37:09",
+      "modifiedDate": "2022-11-22 07:55:20",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2314026,
+      "testName": "Network - UDP Agent to Agent",
+      "type": "agent-to-agent",
+      "interval": 60,
+      "subinterval": -1,
+      "port": 49154,
+      "protocol": "UDP",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "throughputMeasurements": 1,
+      "dscpId": 30,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 488349,
+      "throughputDuration": 10000,
+      "throughputRate": 64,
+      "direction": "BIDIRECTIONAL",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "AF 33 (DSCP 30)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2314026"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2314026"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2314026"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2314026"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-24 14:08:57",
+      "modifiedDate": "2023-04-23 10:31:10",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Asaf Rimon (arimon@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2347524,
+      "testName": "Network TCP Gil Cat9K Branch<->HQ",
+      "type": "agent-to-agent",
+      "interval": 60,
+      "subinterval": -1,
+      "port": 49157,
+      "protocol": "TCP",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "throughputMeasurements": 1,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 346161,
+      "throughputDuration": 10000,
+      "throughputRate": 64,
+      "mss": 200,
+      "direction": "BIDIRECTIONAL",
+      "continuousMode": 0,
+      "pathTraceMode": "inSession",
+      "description": "Agent to Agent",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2347524"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2347524"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2347524"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2347524"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-24 14:10:09",
+      "modifiedDate": "2023-01-26 15:01:05",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2347526,
+      "testName": "Network UDP Gil Cat9K Branch<->HQ",
+      "type": "agent-to-agent",
+      "interval": 60,
+      "subinterval": -1,
+      "port": 49158,
+      "protocol": "UDP",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "throughputMeasurements": 1,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 346161,
+      "throughputDuration": 10000,
+      "mss": 200,
+      "direction": "BIDIRECTIONAL",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "description": "Agent to Agent",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2347526"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2347526"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2347526"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-04-24 08:46:09",
+      "modifiedDate": "2022-11-22 07:55:17",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2830192,
+      "testName": "network-agent-to-agent",
+      "type": "agent-to-agent",
+      "interval": 120,
+      "subinterval": -1,
+      "port": 49153,
+      "protocol": "TCP",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "throughputMeasurements": 0,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 473316,
+      "throughputDuration": 10000,
+      "throughputRate": 64,
+      "mss": 200,
+      "direction": "BIDIRECTIONAL",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2830192"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2830192"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2830192"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2830192"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-05-03 18:27:41",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2856759,
+      "testName": "icmp_test_1",
+      "type": "agent-to-server",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.252",
+      "protocol": "ICMP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 0,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "pingPayloadSize": -1,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2856759"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2856759"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2856759"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-08-08 10:16:36",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204180,
+      "testName": "net-cisco",
+      "type": "agent-to-server",
+      "interval": 300,
+      "subinterval": -1,
+      "server": "cisco.com:443",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "pingPayloadSize": -1,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204180"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204180"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204180"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2204180"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-08-08 14:36:02",
+      "modifiedDate": "2022-11-22 07:55:18",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204265,
+      "testName": "net-tesla",
+      "type": "agent-to-server",
+      "interval": 600,
+      "subinterval": -1,
+      "server": "tesla.com:443",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "pingPayloadSize": -1,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204265"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204265"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204265"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2204265"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-08-08 14:34:21",
+      "modifiedDate": "2022-11-22 07:55:23",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2204263,
+      "testName": "net-yahoo",
+      "type": "agent-to-server",
+      "interval": 300,
+      "subinterval": -1,
+      "server": "yahoo.com:443",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "pingPayloadSize": -1,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "inSession",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204263"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204263"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204263"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2204263"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-11-17 19:49:01",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2406328,
+      "testName": "Office 365 Login",
+      "type": "agent-to-server",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "52.112.14.70:80",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "dscpId": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "pingPayloadSize": -1,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2406328"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2406328"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2406328"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2406328"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-11-22 09:10:45",
+      "createdBy": "Amir Kroparo (amikropa@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3285590,
+      "testName": "TCP-Amir-ynet",
+      "type": "agent-to-server",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "www.ynet.co.il:80",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "dscpId": 0,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "pingPayloadSize": -1,
+      "probeMode": "SYN",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "dscp": "Best Effort (DSCP 0)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3285590"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3285590"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3285590"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-08-08 10:30:27",
+      "modifiedDate": "2022-11-22 07:55:23",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204189,
+      "testName": "dns - yahoo",
+      "type": "dns-server",
+      "interval": 120,
+      "subinterval": -1,
+      "domain": "yahoo.com A",
+      "dnsQueryClass": "IN",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "recursiveQueries": 0,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "dnsServers": [
+        {
+          "serverId": 5433,
+          "serverName": "ns1.yahoo.com."
+        },
+        {
+          "serverId": 5434,
+          "serverName": "ns5.yahoo.com."
+        },
+        {
+          "serverId": 5435,
+          "serverName": "ns2.yahoo.com."
+        },
+        {
+          "serverId": 5436,
+          "serverName": "ns3.yahoo.com."
+        },
+        {
+          "serverId": 5437,
+          "serverName": "ns4.yahoo.com."
+        }
+      ],
+      "numPathTraces": 1,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204189"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/dns/server/2204189"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204189"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204189"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2204189"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-11-22 08:30:33",
+      "modifiedDate": "2023-01-30 10:51:52",
+      "createdBy": "Amir Kroparo (amikropa@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3285532,
+      "testName": "Dns-Ynet",
+      "type": "dns-server",
+      "interval": 120,
+      "subinterval": -1,
+      "domain": "ynet.co.il A",
+      "dnsQueryClass": "IN",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "recursiveQueries": 0,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "dnsServers": [
+        {
+          "serverId": 1264931,
+          "serverName": "144.254.71.184"
+        }
+      ],
+      "numPathTraces": 1,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3285532"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/dns/server/3285532"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3285532"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3285532"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3285532"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-11-22 08:32:44",
+      "createdBy": "Amir Kroparo (amikropa@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 1,
+      "testId": 3285539,
+      "testName": "Dns-Ynet",
+      "type": "dns-server",
+      "interval": 60,
+      "subinterval": -1,
+      "domain": "ynet.co.il A",
+      "dnsQueryClass": "IN",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "recursiveQueries": 0,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "dnsServers": [
+        {
+          "serverId": 2978,
+          "serverName": "8.8.8.8"
+        }
+      ],
+      "numPathTraces": 1,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3285539"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/dns/server/3285539"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3285539"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3285539"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-11-22 08:39:19",
+      "createdBy": "Amir Kroparo (amikropa@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 1,
+      "testId": 3285545,
+      "testName": "Dns-Ynet",
+      "type": "dns-server",
+      "interval": 60,
+      "subinterval": -1,
+      "domain": "ynet.co.il A",
+      "dnsQueryClass": "IN",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "recursiveQueries": 0,
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "dnsServers": [
+        {
+          "serverId": 2978,
+          "serverName": "8.8.8.8"
+        }
+      ],
+      "numPathTraces": 1,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3285545"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/dns/server/3285545"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3285545"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3285545"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-05-04 21:32:21",
+      "modifiedDate": "2022-11-28 14:11:24",
+      "createdBy": "Pratik Patel (prapate2@cisco.com)",
+      "modifiedBy": "Amir Kroparo (amikropa@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2858889,
+      "testName": "Amazon",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://amazon.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "description": "amzon website up or down ",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2858889"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2858889"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2858889"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2858889"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2858889"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-10-25 15:48:25",
+      "modifiedDate": "2022-11-22 07:55:20",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2349505,
+      "testName": "CNN",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://www.cnn.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2349505"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2349505"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2349505"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2349505"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-03-14 20:33:38",
+      "modifiedDate": "2022-11-22 07:55:20",
+      "createdBy": "Harsharan Dhaliwal (hadhaliw@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2632432,
+      "testName": "Facebook",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://facebook.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 15,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2632432"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2632432"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2632432"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2632432"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2632432"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-03-29 05:24:32",
+      "modifiedDate": "2022-11-22 07:55:22",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2703462,
+      "testName": "failed-http",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://abcd.abcd.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2703462"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2703462"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2703462"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2703462"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2703462"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-09-14 08:00:36",
+      "modifiedDate": "2022-11-22 07:55:20",
+      "createdBy": "Pratik Patel (prapate2@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 3128830,
+      "testName": "flipkart.com",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://flipkart.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3128830"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/3128830"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3128830"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3128830"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3128830"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2023-04-27 17:54:58",
+      "createdBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3681246,
+      "testName": "Gidi's Live setup",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://ynet.co.il",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "description": "DNAC live setup 29.11",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3681246"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/3681246"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3681246"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3681246"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3681246"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-03-14 20:34:19",
+      "modifiedDate": "2022-11-22 07:55:18",
+      "createdBy": "Harsharan Dhaliwal (hadhaliw@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2632433,
+      "testName": "Google",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://www.google.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2632433"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2632433"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2632433"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2632433"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2632433"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-05-09 12:29:12",
+      "modifiedDate": "2023-05-30 09:04:57",
+      "createdBy": "Asher Kakoon (akakoon@cisco.com)",
+      "modifiedBy": "Asher Kakoon (akakoon@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2866689,
+      "testName": "HTTP Asher - one.co.il",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://www.one.co.il",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 100,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2866689"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2866689"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2866689"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2866689"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2866689"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-10-25 16:16:56",
+      "modifiedDate": "2023-02-06 07:25:28",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2349593,
+      "testName": "HTTP Gil Cat9K Branch<->BITNAMI",
+      "type": "http-server",
+      "interval": 60,
+      "subinterval": -1,
+      "url": "http://192.168.100.2/test1.html",
+      "protocol": "ICMP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 1,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 100,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 0,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "fixedPacketRate": 100,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2349593"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2349593"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2349593"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2349593"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-07-03 08:02:40",
+      "modifiedDate": "2022-11-22 07:55:19",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2967271,
+      "testName": "HTTP Gil Cat9K Branch<->CNN",
+      "type": "http-server",
+      "interval": 60,
+      "subinterval": -1,
+      "url": "https://www.cnn.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 1,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2967271"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2967271"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2967271"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2967271"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-10-24 08:41:54",
+      "modifiedDate": "2023-01-29 08:56:38",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2347217,
+      "testName": "HTTP Gil Cat9K Branch<->YNET",
+      "type": "http-server",
+      "interval": 60,
+      "subinterval": -1,
+      "url": "https://www.ynet.co.il",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 1,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2347217"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2347217"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2347217"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2347217"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-08-12 09:38:17",
+      "modifiedDate": "2023-04-16 08:38:46",
+      "createdBy": "btradons@cisco.com (btradons@cisco.com)",
+      "modifiedBy": "Asher Kakoon (akakoon@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2211608,
+      "testName": "MedicalRecords",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://healthy.kaiserpermanente.org",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2211608"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2211608"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2211608"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2211608"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2211608"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-07-26 17:41:24",
+      "modifiedDate": "2023-02-06 07:26:26",
+      "createdBy": "Harsharan Dhaliwal (hadhaliw@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3015077,
+      "testName": "microsoft",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://www.microsoft.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3015077"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/3015077"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3015077"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3015077"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-06-26 07:55:23",
+      "modifiedDate": "2022-11-22 07:55:20",
+      "createdBy": "Bes Dollma (bdollma@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2140028,
+      "testName": "NetSense - www.slack-redir.net",
+      "type": "http-server",
+      "interval": 60,
+      "subinterval": -1,
+      "url": "https://www.slack-redir.net",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "description": "A test to www.slack-redir.net created by REST API",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2140028"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2140028"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2140028"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2140028"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2140028"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-03-14 20:35:15",
+      "modifiedDate": "2022-11-22 07:55:18",
+      "createdBy": "Harsharan Dhaliwal (hadhaliw@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2632434,
+      "testName": "Reddit",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://reddit.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 200,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2632434"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2632434"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2632434"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2632434"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2632434"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-06-26 07:55:28",
+      "modifiedDate": "2022-11-22 08:27:03",
+      "createdBy": "Bes Dollma (bdollma@cisco.com)",
+      "modifiedBy": "Amir Kroparo (amikropa@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2140029,
+      "testName": "Salesforce",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://www.salesforce.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "description": "",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2140029"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2140029"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2140029"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2140029"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2140029"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-11-07 08:55:01",
+      "modifiedDate": "2022-11-22 07:55:17",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2377498,
+      "testName": "sampleTestOnCloud",
+      "type": "http-server",
+      "interval": 600,
+      "subinterval": -1,
+      "url": "https://www.google.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2377498"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2377498"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2377498"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2377498"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2377498"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-03-14 20:36:04",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Harsharan Dhaliwal (hadhaliw@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2632436,
+      "testName": "Southwest Airlines",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://www.southwest.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2632436"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2632436"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2632436"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2632436"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-08-08 14:32:21",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204260,
+      "testName": "web-alaska",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://www.alaska.org/",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204260"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2204260"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204260"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204260"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2204260"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-06-30 01:39:22",
+      "modifiedDate": "2022-11-22 07:55:17",
+      "createdBy": "Raj kumar Goli (ragoli@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2146015,
+      "testName": "web-cisco-careers",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://www.cisco.com/c/en/us/about/careers.html",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 1,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2146015"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2146015"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2146015"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2146015"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2146015"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-08-08 14:33:11",
+      "modifiedDate": "2022-11-22 07:55:23",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204262,
+      "testName": "web-torresdelpaine",
+      "type": "http-server",
+      "interval": 600,
+      "subinterval": -1,
+      "url": "https://torresdelpaine.com/en/",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204262"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2204262"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204262"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204262"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2204262"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-08-08 13:03:24",
+      "modifiedDate": "2022-11-22 07:55:19",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204249,
+      "testName": "web-ynet-economy",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://www.ynet.co.il/economy",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204249"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2204249"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204249"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204249"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-08-08 10:16:09",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2204178,
+      "testName": "web-ynet-news",
+      "type": "http-server",
+      "interval": 120,
+      "subinterval": -1,
+      "url": "https://www.ynet.co.il/news",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2204178"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2204178"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2204178"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2204178"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-10-21 17:26:38",
+      "modifiedDate": "2023-01-29 14:17:17",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2341718,
+      "testName": "webex",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://www.webex.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2341718"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/2341718"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/2341718"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/2341718"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2341718"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2022-11-22 08:52:31",
+      "modifiedDate": "2023-04-30 14:25:19",
+      "createdBy": "Amir Kroparo (amikropa@cisco.com)",
+      "modifiedBy": "Asaf Rimon (arimon@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3285562,
+      "testName": "Ynet-Amir-HTTP",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://www.ynet.co.il",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 1,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3285562"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/3285562"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/3285562"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/3285562"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "createdDate": "2021-10-07 07:21:59",
+      "modifiedDate": "2023-01-30 10:19:52",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2302578,
+      "testName": "rtp agent to agent",
+      "type": "voice",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.12:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 306906,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2302578"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-07 07:21:59",
+      "modifiedDate": "2023-01-30 10:19:52",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2302578,
+      "testName": "rtp agent to agent",
+      "type": "voice",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.12:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 306906,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2302578"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-07 07:21:59",
+      "modifiedDate": "2023-01-30 10:19:52",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2302578,
+      "testName": "rtp agent to agent",
+      "type": "voice",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.12:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 306906,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2302578"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-07 07:21:59",
+      "modifiedDate": "2023-01-30 10:19:52",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 2302578,
+      "testName": "rtp agent to agent",
+      "type": "voice",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.12:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 306906,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2302578"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2302578"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-05 15:32:57",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2297421,
+      "testName": "rtp agent to cloud",
+      "type": "voice",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.12:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 306906,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2297421"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2297421"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2297421"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-05 15:32:57",
+      "modifiedDate": "2022-11-22 07:55:21",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Guy Keinan (gkeinan@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2297421,
+      "testName": "rtp agent to cloud",
+      "type": "voice",
+      "interval": 120,
+      "subinterval": -1,
+      "server": "10.56.216.12:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 306906,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2297421"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2297421"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2297421"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-10-03 10:45:51",
+      "modifiedDate": "2023-04-23 08:17:43",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Asaf Rimon (arimon@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3167455,
+      "testName": "rtp agent to webex cloud",
+      "type": "voice",
+      "interval": 300,
+      "subinterval": -1,
+      "server": "vps6-nrt03.webex.ag1.thousandeyes.com:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 364031,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3167455"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/3167455"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3167455"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-10-03 10:45:51",
+      "modifiedDate": "2023-04-23 08:17:43",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "Asaf Rimon (arimon@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3167455,
+      "testName": "rtp agent to webex cloud",
+      "type": "voice",
+      "interval": 300,
+      "subinterval": -1,
+      "server": "vps6-nrt03.webex.ag1.thousandeyes.com:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 364031,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3167455"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/3167455"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3167455"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-21 13:17:51",
+      "modifiedDate": "2023-01-26 14:41:10",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2341118,
+      "testName": "RTP Gil Cat9K Branch<->HQ",
+      "type": "voice",
+      "interval": 60,
+      "subinterval": -1,
+      "server": "192.168.100.178:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 346161,
+      "description": "RTP test between Cat9K switches",
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2341118"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2341118"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2341118"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-21 13:17:51",
+      "modifiedDate": "2023-01-26 14:41:10",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2341118,
+      "testName": "RTP Gil Cat9K Branch<->HQ",
+      "type": "voice",
+      "interval": 60,
+      "subinterval": -1,
+      "server": "192.168.100.178:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 346161,
+      "description": "RTP test between Cat9K switches",
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2341118"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2341118"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2341118"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-17 14:12:36",
+      "modifiedDate": "2023-01-26 14:38:33",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2330522,
+      "testName": "RTP Gil VM Branch<->HQ",
+      "type": "voice",
+      "interval": 60,
+      "subinterval": -1,
+      "server": "192.168.100.175:49156",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 343741,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2330522"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2330522"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2330522"
+        }
+      ]
+    },
+    {
+      "createdDate": "2021-10-17 14:12:36",
+      "modifiedDate": "2023-01-26 14:38:33",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "enabled": 0,
+      "savedEvent": 0,
+      "testId": 2330522,
+      "testName": "RTP Gil VM Branch<->HQ",
+      "type": "voice",
+      "interval": 60,
+      "subinterval": -1,
+      "server": "192.168.100.175:49156",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 0,
+      "liveShare": 0,
+      "targetAgentId": 343741,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/2330522"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/2330522"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/2330522"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-10-26 11:39:29",
+      "modifiedDate": "2023-03-20 09:05:36",
+      "createdBy": "Gil Blumenfeld (gblumenf@cisco.com)",
+      "modifiedBy": "Lior Katzri (lkatzri@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3213056,
+      "testName": "RTP to Webex Cloud",
+      "type": "voice",
+      "interval": 60,
+      "subinterval": -1,
+      "server": "vps10-ams02.webex.ag1.thousandeyes.com:49203",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 15,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 40,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 364026,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3213056"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/3213056"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3213056"
+        }
+      ]
+    },
+    {
+      "createdDate": "2022-10-26 13:18:32",
+      "modifiedDate": "2023-02-06 08:15:47",
+      "createdBy": "Asaf Rimon (arimon@cisco.com)",
+      "modifiedBy": "btradons@cisco.com (btradons@cisco.com)",
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 3213375,
+      "testName": "RTP voice buffer to Webex Cloud",
+      "type": "voice",
+      "interval": 60,
+      "subinterval": -1,
+      "server": "vps1-ams02.webex.ag1.thousandeyes.com:49152",
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "duration": 5,
+      "codec": "G.711 @ 64 Kbps",
+      "codecId": 0,
+      "dscpId": 46,
+      "jitterBuffer": 0,
+      "alertsEnabled": 1,
+      "liveShare": 0,
+      "targetAgentId": 364026,
+      "numPathTraces": 3,
+      "dscp": "EF (DSCP 46)",
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/3213375"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/voice/rtp-stream/3213375"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/3213375"
+        }
+      ]
+    },
+    {
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 1026597,
+      "testName": "Clever Login",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "https://clever.com/login",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 0,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 0,
+      "usePublicBgp": 0,
+      "alertsEnabled": 0,
+      "liveShare": 1,
+      "httpTimeLimit": 5,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/1026597"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/1026597"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/1026597"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/1026597"
+        }
+      ],
+      "sslVersion": "Auto"
+    },
+    {
+      "enabled": 1,
+      "savedEvent": 0,
+      "testId": 78972,
+      "testName": "Slack",
+      "type": "http-server",
+      "interval": 300,
+      "subinterval": -1,
+      "url": "http://api.slack.com",
+      "protocol": "TCP",
+      "ipv6Policy": "USE_AGENT_POLICY",
+      "networkMeasurements": 1,
+      "mtuMeasurements": 1,
+      "bandwidthMeasurements": 0,
+      "bgpMeasurements": 1,
+      "usePublicBgp": 1,
+      "alertsEnabled": 0,
+      "liveShare": 1,
+      "httpTimeLimit": 8,
+      "httpTargetTime": 1000,
+      "httpVersion": 2,
+      "followRedirects": 1,
+      "sslVersionId": 0,
+      "verifyCertificate": 1,
+      "useNtlm": 0,
+      "authType": "NONE",
+      "contentRegex": "",
+      "probeMode": "AUTO",
+      "continuousMode": 0,
+      "pathTraceMode": "classic",
+      "numPathTraces": 3,
+      "apiLinks": [
+        {
+          "rel": "self",
+          "href": "https://api.thousandeyes.com/v6/tests/78972"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/web/http-server/78972"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/metrics/78972"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/path-vis/78972"
+        },
+        {
+          "rel": "data",
+          "href": "https://api.thousandeyes.com/v6/net/bgp-metrics/78972"
+        }
+      ],
+      "sslVersion": "Auto"
+    }
+  ]
+}
