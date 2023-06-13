@@ -9,8 +9,10 @@ import java.net.http.HttpResponse;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
@@ -25,17 +27,18 @@ public class TeClient {
     private JsonParser jsonParser;
     private String authToken;
 
+    private TeParser teParser;
+
     public TeClient() {
         this.setHttpClient();
         jsonParser = JsonParserFactory.getJsonParser();
         authToken = "398f3c3d-d381-41d1-88c5-7b37094563e7"; // bearer auth token. Taken from ben TE account
+        teParser = new TeParser();
     }
 
     public Timestamp getTeTimestamp() throws IOException, InterruptedException {
         HttpResponse<String> response =
                 client.send(getRequest(STATUS_URL), HttpResponse.BodyHandlers.ofString());
-//        System.out.println(response.statusCode());
-//        System.out.println(response.body());
         if (response.statusCode() != 200){
             System.out.println("ERROR: status code " + response.statusCode());
             return null;
@@ -43,7 +46,7 @@ public class TeClient {
         Map<String,Object> result = jsonParser.parseMap(response.body());
      return new Timestamp(Long.parseLong(result.get("timestamp").toString()));
     }
-    public List<String> getTEtest() throws IOException, InterruptedException{
+    public Set<String> getTEtest() throws IOException, InterruptedException{
         HttpResponse<String> response =
                 client.send(getRequestWithToken(TESTS_URL), HttpResponse.BodyHandlers.ofString());
         System.out.println(response.statusCode());
@@ -52,7 +55,18 @@ public class TeClient {
             System.out.println("ERROR: status code " + response.statusCode());
             return null;
         }
-        return null;
+        TeTestList teTestList = teParser.ParseTestResult(response.body());
+        Set<String> servers = getServersFromTestList(teTestList);
+        System.out.println("Servers are: "+servers.toString());
+        return servers;
+    }
+
+    public Set<String> getServersFromTestList(TeTestList teTestList){
+        Set<String> serversSet = new HashSet<>();
+        for (TeTest teTest: teTestList.tests){
+            serversSet.add(teTest.server);
+        }
+        return serversSet;
     }
 
 
