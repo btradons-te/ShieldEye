@@ -25,7 +25,7 @@ public class SdAvcClient {
     @Autowired
     private SdAvcConnectorFactory sdavcConnectorFactory;  
 
-	public List<DcsDevice> getTestDcsDevices(SdAvcServerLogin sdAvclogin, String segment, int periodInMinutes) throws SdAvcClientException {
+	public List<DcsDevice> getTestDcsDevices(SdAvcServerLogin sdAvclogin, String segment, long periodInMinutes) throws SdAvcClientException {
         Gson gson = new Gson();
     	DcsDevice[] devices = gson.fromJson(testResponse, DcsDevice[].class);
         return Arrays.asList(devices);		

@@ -57,7 +57,7 @@ public class TeClient {
             teTestList.tests = teTestList.tests.stream().filter(t -> t.isRelevant(timeFrame.get(1))).toList();
             Set<String> servers = getServersFromTestList(teTestList);
             System.out.println("Servers are: " + servers.toString());
-        return servers.stream().toList().subList(0,1);
+        return servers.stream().toList().subList(1,2);
         }
         catch (Exception e){
             System.out.println(e.toString());

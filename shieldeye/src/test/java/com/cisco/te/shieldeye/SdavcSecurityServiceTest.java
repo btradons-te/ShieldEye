@@ -38,10 +38,10 @@ public class SdavcSecurityServiceTest {
 	@BeforeClass
 	public void init() throws IOException {
 		mocks = MockitoAnnotations.openMocks(this);
-		String json = new String(Files.readAllBytes(Paths.get("src/test/resources/dcsDevicesResponse.json")));
-		List<DcsDevice> devices = Arrays.asList(new Gson().fromJson(json, DcsDevice[].class));
-		doReturn(devices).when(sdavcClient).getDcsDevices(Mockito.any(SdAvcServerLogin.class), Mockito.anyString(), Mockito.anyInt());
-		doReturn(devices).when(sdavcClient).getTestDcsDevices(Mockito.any(SdAvcServerLogin.class), Mockito.anyString(), Mockito.anyInt());
+		ShieldEyeUtils shieldEyeUtils = new ShieldEyeUtils();
+		List<DcsDevice> devices = shieldEyeUtils.getMockedDevices();
+		doReturn(devices).when(sdavcClient).getDcsDevices(Mockito.any(SdAvcServerLogin.class), Mockito.anyString(), Mockito.anyLong());
+		doReturn(devices).when(sdavcClient).getTestDcsDevices(Mockito.any(SdAvcServerLogin.class), Mockito.anyString(), Mockito.anyLong());
 	}
 
 	@AfterClass

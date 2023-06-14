@@ -6,7 +6,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class DetectedAnomaly {
-
     @SerializedName("anomalyProbes")
     @Expose
     private List<AnomalyProbe> anomalyProbes;

@@ -3,10 +3,11 @@
  */
 package com.cisco.te.shieldeye.model;
 
+import com.cisco.te.shieldeye.sdavc.client.model.DetectedAnomaly;
+import com.cisco.te.shieldeye.sdavc.client.model.SharedAnomaly;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.cisco.te.shieldeye.sdavc.client.model.DetectedAnomaly;
 
 /**
  * @author yurpopov
@@ -14,7 +15,7 @@ import com.cisco.te.shieldeye.sdavc.client.model.DetectedAnomaly;
  */
 public class TargetScanResult {
 	private String targetIp;
-	private List<DetectedAnomaly> detectedAnomalies;
+	private List<SharedAnomaly> detectedAnomalies;
 	/**
 	 * @return the targetIp
 	 */
@@ -30,13 +31,13 @@ public class TargetScanResult {
 	/**
 	 * @return the detectedAnomalies
 	 */
-	public List<DetectedAnomaly> getDetectedAnomalies() {
+	public List<SharedAnomaly> getDetectedAnomalies() {
 		return detectedAnomalies;
 	}
 	/**
 	 * @param detectedAnomalies the detectedAnomalies to set
 	 */
-	public void setDetectedAnomalies(List<DetectedAnomaly> detectedAnomalies) {
+	public void setDetectedAnomalies(List<SharedAnomaly> detectedAnomalies) {
 		this.detectedAnomalies = detectedAnomalies;
 	}
 	
@@ -44,7 +45,7 @@ public class TargetScanResult {
 	 * Add detected anomalies list
 	 * @param anomalies
 	 */
-	public void add(List<DetectedAnomaly> anomalies) {
+	public void add(List<SharedAnomaly> anomalies) {
 		if (this.detectedAnomalies == null) {
 			this.detectedAnomalies = new ArrayList<>();
 		}

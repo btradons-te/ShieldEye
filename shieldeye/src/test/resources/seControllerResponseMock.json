@@ -1,0 +1,60 @@
+{
+  "targetScanResult": [
+    {
+      "targetIp": "10.56.96.92",
+      "detectedAnomalies": [
+        {
+          "anomalyProbes": [
+            {
+              "detectionTime": [
+                "1679351481846"
+              ],
+              "port": [
+                "23"
+              ],
+              "protocol": [
+                "telnet"
+              ],
+              "scanNames": [
+                "WeakCredentialListScanner"
+              ],
+              "scannedIp": [
+                "10.56.96.92"
+              ],
+              "version": [
+                ""
+              ],
+              "weakPassword": [
+                "lab"
+              ],
+              "weakUserName": [
+                "lab"
+              ],
+              "scanTcpNames": null,
+              "unauthorizedTcpPorts": null,
+              "unauthorizedTcpPortsDetectionTime": null
+            }
+          ],
+          "confidence": 100,
+          "detectionID": "1643",
+          "detectionTime": 1679351481846,
+          "detectionType": "weakCredentials",
+          "reason": "weak credentials were identified",
+          "sdavcReason": "weak credentials were identified",
+          "severity": 80,
+          "sources": [
+            "protocol",
+            "weakPassword",
+            "port",
+            "scannedIp",
+            "scanNames",
+            "weakUserName",
+            "version",
+            "detectionTime"
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "Success"
+}
