@@ -52,16 +52,16 @@ public class SdavcSecurityServiceTest {
 	@Test
 	public void getSecurityIssuesTest() {
 		List<String> targetIps = Arrays.asList("10.56.96.92", "10.56.96.93");
-		SecurityScanResponse response = sdavcSecurityService.getSecurityIssues(targetIps, "apple", 120);
+		SecurityScanResponse response = sdavcSecurityService.getSecurityIssues(targetIps, "apple", Long.valueOf(120));
 		assertNotNull(response.getTargetScanResult());
 		assertEquals(response.getTargetScanResult().size(), 2);
 
-		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.92"), "apple", 120);
+		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.92"), "apple", Long.valueOf(120));
 		assertNotNull(response.getTargetScanResult());
 		assertEquals(response.getTargetScanResult().size(), 1);
 		assertEquals(response.getTargetScanResult().iterator().next().getTargetIp(), "10.56.96.92");
 
-		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.93"), "apple", 120);
+		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.93"), "apple", Long.valueOf(120));
 		assertNotNull(response.getTargetScanResult());
 		assertEquals(response.getTargetScanResult().size(), 1);
 		assertEquals(response.getTargetScanResult().iterator().next().getTargetIp(), "10.56.96.93");

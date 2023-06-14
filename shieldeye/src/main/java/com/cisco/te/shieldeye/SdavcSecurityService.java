@@ -36,7 +36,45 @@ public class SdavcSecurityService {
 	 * @param periodInMinutes
 	 * @return SecurityScanResponse
 	 */
-	public SecurityScanResponse getSecurityIssues(List<String> targetIps, String segment, Integer periodInMinutes) {
+	public SecurityScanResponse getSecurityIssues(List<String> targetIps, String segment, Long periodInMinutes) {
+		SecurityScanResponse scanResponse = new SecurityScanResponse();
+		try {
+			SdAvcServerDefaultLogin sdAvclogin = new SdAvcServerDefaultLogin();
+			sdAvclogin.setSdAvcIp(SDAVC_SEVRVER_IP);
+			sdAvclogin.setSdavcPort(SDAVC_PORT);
+			sdAvclogin.setUserName(SDAVC_USER);
+			sdAvclogin.setPassword(SDAVC_PASSWORD);
+			sdAvclogin.setEnabled(true);
+
+			// TODO replace method call to the getDcsDevices
+			List<DcsDevice> devices = sdAvcClient.getDcsDevices(sdAvclogin, segment, periodInMinutes);
+			scanResponse.setStatus("Success");
+
+			Map<String, TargetScanResult> scanResultsPerDevice = new HashMap<>();
+			for (DcsDevice dcsDevice : devices) {
+				String deviceIp = dcsDevice.getMetadata().getProbeData().getIp();
+				if (targetIps.contains(deviceIp)) {
+					TargetScanResult deviceScanResult;
+					if (scanResultsPerDevice.containsKey(deviceIp)) {
+						deviceScanResult = scanResultsPerDevice.get(deviceIp);
+					} else {
+						deviceScanResult = new TargetScanResult();
+						deviceScanResult.setTargetIp(deviceIp);
+						scanResultsPerDevice.put(deviceIp, deviceScanResult);
+					}
+					List<DetectedAnomaly> anomalies = dcsDevice.getMetadata().getAnomalies().getDetectedAnomalies();
+					deviceScanResult.add(anomalies);
+				}
+			}
+			scanResponse.setTargetScanResult(scanResultsPerDevice.values());
+		} catch (Exception e) {
+			scanResponse.setStatus(ExceptionUtils.getFullStackTrace(e));
+		}
+		return scanResponse;
+	}
+
+
+	public SecurityScanResponse getSecurityIssuesMock(List<String> targetIps, String segment, Long periodInMinutes) {
 		SecurityScanResponse scanResponse = new SecurityScanResponse();
 
 		try {

@@ -40,13 +40,13 @@ public class SdAvcClient {
      * @return
      * @throws SdAvcClientException
      */
-    public List<DcsDevice> getDcsDevices(SdAvcServerLogin sdavcServerLogin, String segment, int periodInMinutes) throws SdAvcClientException {
+    public List<DcsDevice> getDcsDevices(SdAvcServerLogin sdavcServerLogin, String segment, long periodInMinutes) throws SdAvcClientException {
     	String url = buildUrl(segment, periodInMinutes);
     	DcsDevice[] devices = httpGetAsType(sdavcServerLogin, url, DcsDevice[].class);
         return Arrays.asList(devices);
     }
 
-	String buildUrl(String segment, int periodInMinutes) {	
+	String buildUrl(String segment, long periodInMinutes) {
 		return String.format(SdAvcClientConstants.SDAVC_DCS_DEVICES, segment, periodInMinutes);
 	}
 

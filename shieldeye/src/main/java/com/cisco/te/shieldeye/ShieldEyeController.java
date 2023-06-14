@@ -1,6 +1,5 @@
 package com.cisco.te.shieldeye;
 
-import java.util.Arrays;
 import java.util.List;
 
 import com.cisco.te.shieldeye.client.te.TeClient;
@@ -28,13 +27,26 @@ public class ShieldEyeController {
 	private SdavcSecurityService sdavcSecurityService;
 
 	@Autowired
+	private ShieldEyeUtils shieldEyeUtils;
+
+	@Autowired
 	private TeClient teClient;
 	
 	@GetMapping("/security-scan")
-	public SecurityScanResponse securityScan(@RequestParam(value = "segment", defaultValue = "apple") String segment, @RequestParam(value = "periodInMinutes", defaultValue = "120") Integer periodInMinutes) {
-		logger.info("Getting security scan for segment={}, period={}", segment, periodInMinutes);
-		List<String> targetIps = teClient.getTEtest();
-		SecurityScanResponse scan = sdavcSecurityService.getSecurityIssues(targetIps, segment, periodInMinutes);		
+	public SecurityScanResponse securityScan(@RequestParam(value = "segment", defaultValue = "apple") String segment, @RequestParam(value = "windowStart", defaultValue = "1686731700") Long windowStart, @RequestParam(value = "windowSize", defaultValue = "5") Integer windowSize, @RequestParam(value = "mock", defaultValue = "false") boolean isMock) {
+		logger.info("Getting security scan for segment={}, windowStart={}, windowSize={}", segment, windowStart, windowSize);
+
+		List<Long> timeFrame = shieldEyeUtils.getTimeFrame(windowStart, windowSize);
+		long periodInMinutes = shieldEyeUtils.getPeriodInMinutes(windowStart);
+		List<String> targetIps = teClient.getTEtest(timeFrame);
+		logger.info("Potential servers are {}",targetIps);
+		SecurityScanResponse scan;
+		if (isMock){
+			scan = sdavcSecurityService.getSecurityIssuesMock(targetIps, segment, periodInMinutes);
+		}
+		scan = sdavcSecurityService.getSecurityIssues(targetIps, segment, periodInMinutes);
 		return scan; 
 	}
+
+
 }

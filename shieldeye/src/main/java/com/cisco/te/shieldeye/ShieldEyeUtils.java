@@ -1,14 +1,23 @@
 package com.cisco.te.shieldeye;
 
+import org.springframework.stereotype.Component;
+
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ShieldEyeControllerUtils {
-    public static int FIVE_MINUTES_EPOCH = 5 * 60;
-    private List<Integer> getTimeFrame(int roundId, int windowSize){
-        List<Integer> timeFrame = new ArrayList<>();
-        timeFrame.add(roundId);
-        timeFrame.add(roundId + FIVE_MINUTES_EPOCH);
+@Component
+public class ShieldEyeUtils {
+
+    public List<Long> getTimeFrame(long windowStart, int windowSize){
+        List<Long> timeFrame = new ArrayList<>();
+        timeFrame.add(windowStart);
+        timeFrame.add(windowStart + windowSize*60); // window size is in minutes. TimeFrame is epoch.
+        return timeFrame;
+    }
+
+    public long getPeriodInMinutes(long windowStart){
+        return (long) Math.ceil((Instant.now().getEpochSecond() - windowStart)/60.0);
     }
 }
