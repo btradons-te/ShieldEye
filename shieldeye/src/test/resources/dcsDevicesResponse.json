@@ -1,356 +1,286 @@
 [
-    {
+  {
     "hitRate": 2,
     "key": "A0:36:00:DD:00:00",
     "lastClearTime": "1970-01-01T00:00:00Z",
     "lastHitsTime": "2023-03-20T22:29:32Z",
     "lastSyncTime": "1970-01-01T00:00:00Z",
-    "metadata":
-        {
-        "anomalies":
-            {
-            "anomalyDecision":
-                [
-                    {
-                    "anomalyType": "weakCredentialsDecision",
-                    "confidence": 100,
-                    "description": "weak credentials were identified",
-                    "detectionID":
-                        [
-                        "1643"
-                        ],
-                    "severity": 80
-                    }
+    "metadata": {
+      "anomalies": {
+        "anomalyDecision": [
+          {
+            "anomalyType": "weakCredentialsDecision",
+            "confidence": 100,
+            "description": "weak credentials were identified",
+            "detectionID": [
+              "1643"
+            ],
+            "severity": 80
+          }
+        ],
+        "detectedAnomalies": [
+          {
+            "anomalyProbes": [
+              {
+                "detectionTime": [
+                  "1679351481846"
                 ],
-            "detectedAnomalies":
-                [
-                    {
-                    "anomalyProbes":
-                        [
-                            {
-                            "detectionTime":
-                                [
-                                "1679351481846"
-                                ],
-                            "port":
-                                [
-                                "23"
-                                ],
-                            "protocol":
-                                [
-                                "telnet"
-                                ],
-                            "scanNames":
-                                [
-                                "WeakCredentialListScanner"
-                                ],
-                            "scannedIp":
-                                [
-                                "10.56.96.92"
-                                ],
-                            "version":
-                                [
-                                ""
-                                ],
-                            "weakPassword":
-                                [
-                                "lab"
-                                ],
-                            "weakUserName":
-                                [
-                                "lab"
-                                ]
-                            }
-                        ],
-                    "confidence": 100,
-                    "detectionID": "1643",
-                    "detectionTime": 1679351481846,
-                    "detectionType": "weakCredentials",
-                    "reason": "weak credentials were identified",
-                    "sdavcReason": "weak credentials were identified",
-                    "severity": 80,
-                    "sources":
-                        [
-                        "protocol",
-                        "weakPassword",
-                        "port",
-                        "scannedIp",
-                        "scanNames",
-                        "weakUserName",
-                        "version",
-                        "detectionTime"
-                        ]
-                    }
+                "port": [
+                  "23"
+                ],
+                "protocol": [
+                  "telnet"
+                ],
+                "scanNames": [
+                  "WeakCredentialListScanner"
+                ],
+                "scannedIp": [
+                  "10.56.96.92"
+                ],
+                "version": [
+                  ""
+                ],
+                "weakPassword": [
+                  "lab"
+                ],
+                "weakUserName": [
+                  "lab"
                 ]
-            },
-        "classificationData":
-            {
-            "confidenceDeviceType":
-                [
-                "20"
-                ],
-            "confidenceHardwareManufacturer":
-                [
-                "20"
-                ],
-            "confidenceHardwareModel":
-                [
-                "20"
-                ],
-            "confidenceOperatingSystem":
-                [
-                "20"
-                ],
-            "conflictingTagsSource":
-                [
-                "{\"nbar\":[\"macAddress\",\"userAgent\",\"ip\"]}"
-                ],
-            "consistency":
-                [
-                " "
-                ],
-            "debug":
-                [
-                "{\"fifRate\":2,\"apiRate\":1,\"hitData\":[\"\"],\"ipData\":[\"{\\\"ip\\\":\\\"10.56.96.92\\\", \\\"cSeq\\\":1, \\\"sHitSeq\\\":1, \\\"lHitSeq\\\":2, \\\"hits\\\":2, \\\"cSrc\\\":\\\"selfLine\\\", \\\"othSrc\\\":\\\"vmLine,selfLine\\\", \\\"lVmMngSeq\\\":0}\"],\"value\":[\" \"]}"
-                ],
-            "deviceType":
-                [
-                "Mobile Device"
-                ],
-            "hardwareManufacturer":
-                [
-                "Apple, Inc."
-                ],
-            "hardwareModel":
-                [
-                "iPhone 4",
-                "Apple-iPhone",
-                "Apple-Device"
-                ],
-            "matchedRules":
-                {
-                "deviceType":
-                    {
-                    "ruleId": "userAgentAppleIosExtractorRule",
-                    "ruleType": "System"
-                    },
-                "hardwareManufacturer":
-                    {
-                    "ruleId": "userAgentAppleModelNameRule",
-                    "ruleType": "System"
-                    },
-                "hardwareModel":
-                    {
-                    "ruleId": "userAgentAppleModelNameRule",
-                    "ruleType": "System"
-                    },
-                "operatingSystem":
-                    {
-                    "ruleId": "userAgentAppleIosExtractorRule",
-                    "ruleType": "System"
-                    }
-                },
-            "operatingSystem":
-                [
-                "iOS 7 (7.0.6)",
-                "iOS 7",
-                "iOS"
-                ],
-            "pktDataPrev":
-                [
-                "Device ID = c9300-stack, FIF rate = 2, API rate = 1"
-                ],
-            "pluginId":
-                [
-                "64.1"
-                ]
-            },
-        "probeData":
-            {
-            "ip": "10.56.96.92",
-            "macAddress": "A0:36:00:DD:00:00",
-            "userAgent": "itunesstored/1.0 iOS/7.0.6 model/iPhone3,1 (4; dt:27)",
-            "vrf": "global",
-            "weakCredentialsScanResult":
-                [
-                "{\"scanResults\":[{\"protocol\":\"ssh\",\"version\":\"v1/v2\",\"port\":22,\"scanIds\":[\"WeakCredentialListScanner\"],\"scanTime\":1679352281125},{\"protocol\":\"telnet\",\"version\":\"\",\"port\":23,\"scanIds\":[\"WeakCredentialListScanner\"],\"scanTime\":1679352286082}],\"scannedIp\":\"10.56.96.92\",\"scanTime\":1679352286082,\"reachable\":true}"
-                ]
-            },
-        "probeSources":
-            {
-            "ip": "nbar",
-            "userAgent": "nbar"
-            }
+              }
+            ],
+            "confidence": 100,
+            "detectionID": "1643",
+            "detectionTime": 1679351481846,
+            "detectionType": "weakCredentials",
+            "reason": "weak credentials were identified",
+            "sdavcReason": "weak credentials were identified",
+            "severity": 80,
+            "sources": [
+              "protocol",
+              "weakPassword",
+              "port",
+              "scannedIp",
+              "scanNames",
+              "weakUserName",
+              "version",
+              "detectionTime"
+            ]
+          }
+        ]
+      },
+      "classificationData": {
+        "confidenceDeviceType": [
+          "20"
+        ],
+        "confidenceHardwareManufacturer": [
+          "20"
+        ],
+        "confidenceHardwareModel": [
+          "20"
+        ],
+        "confidenceOperatingSystem": [
+          "20"
+        ],
+        "conflictingTagsSource": [
+          "{\"nbar\":[\"macAddress\",\"userAgent\",\"ip\"]}"
+        ],
+        "consistency": [
+          " "
+        ],
+        "debug": [
+          "{\"fifRate\":2,\"apiRate\":1,\"hitData\":[\"\"],\"ipData\":[\"{\\\"ip\\\":\\\"10.56.96.92\\\", \\\"cSeq\\\":1, \\\"sHitSeq\\\":1, \\\"lHitSeq\\\":2, \\\"hits\\\":2, \\\"cSrc\\\":\\\"selfLine\\\", \\\"othSrc\\\":\\\"vmLine,selfLine\\\", \\\"lVmMngSeq\\\":0}\"],\"value\":[\" \"]}"
+        ],
+        "deviceType": [
+          "Mobile Device"
+        ],
+        "hardwareManufacturer": [
+          "Apple, Inc."
+        ],
+        "hardwareModel": [
+          "iPhone 4",
+          "Apple-iPhone",
+          "Apple-Device"
+        ],
+        "matchedRules": {
+          "deviceType": {
+            "ruleId": "userAgentAppleIosExtractorRule",
+            "ruleType": "System"
+          },
+          "hardwareManufacturer": {
+            "ruleId": "userAgentAppleModelNameRule",
+            "ruleType": "System"
+          },
+          "hardwareModel": {
+            "ruleId": "userAgentAppleModelNameRule",
+            "ruleType": "System"
+          },
+          "operatingSystem": {
+            "ruleId": "userAgentAppleIosExtractorRule",
+            "ruleType": "System"
+          }
         },
+        "operatingSystem": [
+          "iOS 7 (7.0.6)",
+          "iOS 7",
+          "iOS"
+        ],
+        "pktDataPrev": [
+          "Device ID = c9300-stack, FIF rate = 2, API rate = 1"
+        ],
+        "pluginId": [
+          "64.1"
+        ]
+      },
+      "probeData": {
+        "ip": "10.56.96.92",
+        "macAddress": "A0:36:00:DD:00:00",
+        "userAgent": "itunesstored/1.0 iOS/7.0.6 model/iPhone3,1 (4; dt:27)",
+        "vrf": "global",
+        "weakCredentialsScanResult": [
+          "{\"scanResults\":[{\"protocol\":\"ssh\",\"version\":\"v1/v2\",\"port\":22,\"scanIds\":[\"WeakCredentialListScanner\"],\"scanTime\":1679352281125},{\"protocol\":\"telnet\",\"version\":\"\",\"port\":23,\"scanIds\":[\"WeakCredentialListScanner\"],\"scanTime\":1679352286082}],\"scannedIp\":\"10.56.96.92\",\"scanTime\":1679352286082,\"reachable\":true}"
+        ]
+      },
+      "probeSources": {
+        "ip": "nbar",
+        "userAgent": "nbar"
+      }
+    },
     "probeChangeTime": "2023-03-20T22:31:21Z",
     "profilingTime": "2023-03-20T22:31:21Z",
     "segment": "apple"
-    },
-    {
+  },
+  {
     "hitRate": 2,
     "key": "A0:36:00:DD:00:01",
     "lastClearTime": "1970-01-01T00:00:00Z",
     "lastHitsTime": "2023-03-20T22:29:43Z",
     "lastSyncTime": "1970-01-01T00:00:00Z",
-    "metadata":
-        {
-        "anomalies":
-            {
-            "anomalyDecision":
-                [
-                    {
-                    "anomalyType": "unauthorizedPorts",
-                    "confidence": 100,
-                    "description": "unauthorized ports were identified",
-                    "detectionID":
-                        [
-                        "1543"
-                        ],
-                    "severity": 80
-                    }
+    "metadata": {
+      "anomalies": {
+        "anomalyDecision": [
+          {
+            "anomalyType": "unauthorizedPorts",
+            "confidence": 100,
+            "description": "unauthorized ports were identified",
+            "detectionID": [
+              "1543"
+            ],
+            "severity": 80
+          }
+        ],
+        "detectedAnomalies": [
+          {
+            "anomalyProbes": [
+              {
+                "scannedIp": [
+                  "10.56.96.93"
                 ],
-            "detectedAnomalies":
-                [
-                    {
-                    "anomalyProbes":
-                        [
-                            {
-                            "scannedIp":
-                                [
-                                "10.56.96.93"
-                                ],
-                            "scanTcpNames":
-                                [
-                                "CustomOpenPortScanner"
-                                ],
-                            "unauthorizedTcpPorts":
-                                [
-                                "8443"
-                                ],
-                            "unauthorizedTcpPortsDetectionTime":
-                                [
-                                "1679351471488"
-                                ]
-                            }
-                        ],
-                    "confidence": 100,
-                    "detectionID": "1543",
-                    "detectionTime": 1679351471488,
-                    "detectionType": "unauthorizedPorts",
-                    "reason": "unauthorized ports were identified",
-                    "sdavcReason": "unauthorized ports were identified",
-                    "severity": 80,
-                    "sources":
-                        [
-                        "unauthorizedTcpPortsDetectionTime",
-                        "scannedIp",
-                        "scanTcpNames",
-                        "unauthorizedTcpPorts"
-                        ]
-                    }
+                "scanTcpNames": [
+                  "CustomOpenPortScanner"
+                ],
+                "unauthorizedTcpPorts": [
+                  "8443"
+                ],
+                "unauthorizedTcpPortsDetectionTime": [
+                  "1679351471488"
                 ]
-            },
-        "classificationData":
-            {
-            "confidenceDeviceType":
-                [
-                "20"
-                ],
-            "confidenceHardwareManufacturer":
-                [
-                "20"
-                ],
-            "confidenceHardwareModel":
-                [
-                "20"
-                ],
-            "confidenceOperatingSystem":
-                [
-                "20"
-                ],
-            "conflictingTagsSource":
-                [
-                "{\"nbar\":[\"macAddress\",\"userAgent\",\"ip\"]}"
-                ],
-            "consistency":
-                [
-                " "
-                ],
-            "debug":
-                [
-                "{\"fifRate\":2,\"apiRate\":1,\"hitData\":[\"\"],\"ipData\":[\"{\\\"ip\\\":\\\"10.56.96.93\\\", \\\"cSeq\\\":1, \\\"sHitSeq\\\":1, \\\"lHitSeq\\\":2, \\\"hits\\\":2, \\\"cSrc\\\":\\\"selfLine\\\", \\\"othSrc\\\":\\\"vmLine,selfLine\\\", \\\"lVmMngSeq\\\":0}\"],\"value\":[\" \"]}"
-                ],
-            "deviceType":
-                [
-                "Mobile Device"
-                ],
-            "hardwareManufacturer":
-                [
-                "Apple, Inc."
-                ],
-            "hardwareModel":
-                [
-                "iPhone 4",
-                "Apple-iPhone",
-                "Apple-Device"
-                ],
-            "matchedRules":
-                {
-                "deviceType":
-                    {
-                    "ruleId": "userAgentAppleIosExtractorRule",
-                    "ruleType": "System"
-                    },
-                "hardwareManufacturer":
-                    {
-                    "ruleId": "userAgentAppleModelNameRule",
-                    "ruleType": "System"
-                    },
-                "hardwareModel":
-                    {
-                    "ruleId": "userAgentAppleModelNameRule",
-                    "ruleType": "System"
-                    },
-                "operatingSystem":
-                    {
-                    "ruleId": "userAgentAppleIosExtractorRule",
-                    "ruleType": "System"
-                    }
-                },
-            "operatingSystem":
-                [
-                "iOS 7 (7.0.6)",
-                "iOS 7",
-                "iOS"
-                ],
-            "pktDataPrev":
-                [
-                "Device ID = c9300-stack, FIF rate = 2, API rate = 1"
-                ],
-            "pluginId":
-                [
-                "64.1"
-                ]
-            },
-        "probeData":
-            {
-            "ip": "10.56.96.93",
-            "macAddress": "A0:36:00:DD:00:01",
-            "nmapScanResult":
-                [
-                "{\"tcp\":{\"openPorts\":[\"8443\"],\"scanTime\":1679352276369,\"scanIds\":[\"CustomOpenPortScanner\"]},\"udp\":{\"openPorts\":[],\"scanTime\":1679352276648,\"scanIds\":[\"CustomOpenPortScanner\"]},\"scannedIp\":\"10.56.96.93\",\"scanTime\":1679351467483,\"reachable\":true}"
-                ],
-            "userAgent": "itunesstored/1.0 iOS/7.0.6 model/iPhone3,1 (4; dt:27)",
-            "vrf": "global"
-            },
-        "probeSources":
-            {
-            "ip": "nbar",
-            "userAgent": "nbar"
-            }
+              }
+            ],
+            "confidence": 100,
+            "detectionID": "1543",
+            "detectionTime": 1679351471488,
+            "detectionType": "unauthorizedPorts",
+            "reason": "unauthorized ports were identified",
+            "sdavcReason": "unauthorized ports were identified",
+            "severity": 80,
+            "sources": [
+              "unauthorizedTcpPortsDetectionTime",
+              "scannedIp",
+              "scanTcpNames",
+              "unauthorizedTcpPorts"
+            ]
+          }
+        ]
+      },
+      "classificationData": {
+        "confidenceDeviceType": [
+          "20"
+        ],
+        "confidenceHardwareManufacturer": [
+          "20"
+        ],
+        "confidenceHardwareModel": [
+          "20"
+        ],
+        "confidenceOperatingSystem": [
+          "20"
+        ],
+        "conflictingTagsSource": [
+          "{\"nbar\":[\"macAddress\",\"userAgent\",\"ip\"]}"
+        ],
+        "consistency": [
+          " "
+        ],
+        "debug": [
+          "{\"fifRate\":2,\"apiRate\":1,\"hitData\":[\"\"],\"ipData\":[\"{\\\"ip\\\":\\\"10.56.96.93\\\", \\\"cSeq\\\":1, \\\"sHitSeq\\\":1, \\\"lHitSeq\\\":2, \\\"hits\\\":2, \\\"cSrc\\\":\\\"selfLine\\\", \\\"othSrc\\\":\\\"vmLine,selfLine\\\", \\\"lVmMngSeq\\\":0}\"],\"value\":[\" \"]}"
+        ],
+        "deviceType": [
+          "Mobile Device"
+        ],
+        "hardwareManufacturer": [
+          "Apple, Inc."
+        ],
+        "hardwareModel": [
+          "iPhone 4",
+          "Apple-iPhone",
+          "Apple-Device"
+        ],
+        "matchedRules": {
+          "deviceType": {
+            "ruleId": "userAgentAppleIosExtractorRule",
+            "ruleType": "System"
+          },
+          "hardwareManufacturer": {
+            "ruleId": "userAgentAppleModelNameRule",
+            "ruleType": "System"
+          },
+          "hardwareModel": {
+            "ruleId": "userAgentAppleModelNameRule",
+            "ruleType": "System"
+          },
+          "operatingSystem": {
+            "ruleId": "userAgentAppleIosExtractorRule",
+            "ruleType": "System"
+          }
         },
+        "operatingSystem": [
+          "iOS 7 (7.0.6)",
+          "iOS 7",
+          "iOS"
+        ],
+        "pktDataPrev": [
+          "Device ID = c9300-stack, FIF rate = 2, API rate = 1"
+        ],
+        "pluginId": [
+          "64.1"
+        ]
+      },
+      "probeData": {
+        "ip": "10.56.96.93",
+        "macAddress": "A0:36:00:DD:00:01",
+        "nmapScanResult": [
+          "{\"tcp\":{\"openPorts\":[\"8443\"],\"scanTime\":1679352276369,\"scanIds\":[\"CustomOpenPortScanner\"]},\"udp\":{\"openPorts\":[],\"scanTime\":1679352276648,\"scanIds\":[\"CustomOpenPortScanner\"]},\"scannedIp\":\"10.56.96.93\",\"scanTime\":1679351467483,\"reachable\":true}"
+        ],
+        "userAgent": "itunesstored/1.0 iOS/7.0.6 model/iPhone3,1 (4; dt:27)",
+        "vrf": "global"
+      },
+      "probeSources": {
+        "ip": "nbar",
+        "userAgent": "nbar"
+      }
+    },
     "probeChangeTime": "2023-03-20T22:31:11Z",
     "profilingTime": "2023-03-20T22:31:11Z",
     "segment": "apple"
-    }
+  }
 ]

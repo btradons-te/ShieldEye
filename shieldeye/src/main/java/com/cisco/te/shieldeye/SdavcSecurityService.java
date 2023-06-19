@@ -1,6 +1,5 @@
 package com.cisco.te.shieldeye;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -36,7 +35,7 @@ public class SdavcSecurityService {
 	 * @param periodInMinutes
 	 * @return SecurityScanResponse
 	 */
-	public SecurityScanResponse getSecurityIssues(List<String> targetIps, String segment, Long periodInMinutes) {
+	public SecurityScanResponse getSecurityIssues(List<String> targetIps, String segment, Long periodInMinutes, boolean showSensitive) {
 		SecurityScanResponse scanResponse = new SecurityScanResponse();
 		try {
 			SdAvcServerDefaultLogin sdAvclogin = new SdAvcServerDefaultLogin();
@@ -48,6 +47,7 @@ public class SdavcSecurityService {
 
 			// TODO replace method call to the getDcsDevices
 			List<DcsDevice> devices = sdAvcClient.getDcsDevices(sdAvclogin, segment, periodInMinutes);
+			System.out.println("Devices ----> " + devices);
 			scanResponse.setStatus("Success");
 
 			Map<String, TargetScanResult> scanResultsPerDevice = new HashMap<>();
@@ -62,8 +62,9 @@ public class SdavcSecurityService {
 						deviceScanResult.setTargetIp(deviceIp);
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
-					List<SharedAnomaly> anomalies = dcsDevice.getMetadata().getAnomalies().getDetectedAnomalies();
-					deviceScanResult.add(anomalies);
+					Anomalies anomalies = dcsDevice.getMetadata().getAnomalies();
+					List<AnomalyReduced> reducedAnomalies = ShieldEyeUtils.createReducedAnomalies(anomalies, showSensitive);
+					deviceScanResult.add(reducedAnomalies);
 				}
 			}
 			scanResponse.setTargetScanResult(scanResultsPerDevice.values());
@@ -74,7 +75,7 @@ public class SdavcSecurityService {
 	}
 
 
-	public SecurityScanResponse getSecurityIssuesMock(List<String> targetIps, String segment, Long periodInMinutes) {
+	public SecurityScanResponse getSecurityIssuesMock(List<String> targetIps, String segment, Long periodInMinutes, boolean showSensitive) {
 		SecurityScanResponse scanResponse = new SecurityScanResponse();
 		try {
 			List<DcsDevice> devices = ShieldEyeUtils.getMockedDevices();
@@ -92,7 +93,7 @@ public class SdavcSecurityService {
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
 					Anomalies anomaliesRaw = dcsDevice.getMetadata().getAnomalies();
-					List<SharedAnomaly> anomalies = ShieldEyeUtils.createRedAnomaliesFromList(anomaliesRaw);
+					List<AnomalyReduced> anomalies = ShieldEyeUtils.createReducedAnomalies(anomaliesRaw, showSensitive);
 					deviceScanResult.add(anomalies);
 				}
 			}

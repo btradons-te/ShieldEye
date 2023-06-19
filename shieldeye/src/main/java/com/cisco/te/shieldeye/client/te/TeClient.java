@@ -10,6 +10,9 @@ import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.time.Duration;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.springframework.boot.json.JsonParser;
 import org.springframework.boot.json.JsonParserFactory;
@@ -47,8 +50,8 @@ public class TeClient {
     public List<String> getTEtest(List<Long> timeFrame) {
         try {
             HttpResponse<String> response = client.send(getRequestWithToken(TESTS_URL), HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.statusCode());
-            System.out.println(response.body());
+//            System.out.println(response.statusCode());
+//            System.out.println(response.body());
             if (response.statusCode() != 200) {
                 System.out.println("ERROR: status code " + response.statusCode());
                 return null;
@@ -56,13 +59,27 @@ public class TeClient {
             TeTestList teTestList = teParser.ParseTestResult(response.body());
             teTestList.tests = teTestList.tests.stream().filter(t -> t.isRelevant(timeFrame.get(1))).toList();
             Set<String> servers = getServersFromTestList(teTestList);
-            System.out.println("Servers are: " + servers.toString());
-        return servers.stream().toList().subList(1,2);
+            List<String> ipList = filterServers(servers);
+        return ipList;
         }
         catch (Exception e){
             System.out.println(e.toString());
             return new ArrayList<>();
         }
+    }
+
+    private List<String> filterServers (Set<String> servers){
+        Pattern pattern = Pattern.compile("([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})");
+        Set<String> ipList = new HashSet<>();
+        for (String server: servers){
+            if (server == null) continue;
+            Matcher m = pattern.matcher(server);
+            if (m.find()){
+                String ip = m.group(0);
+                ipList.add(ip);
+            }
+        }
+        return ipList.stream().toList();
     }
 
     public Set<String> getServersFromTestList(TeTestList teTestList){
