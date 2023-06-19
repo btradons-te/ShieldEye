@@ -12,10 +12,9 @@
     'use strict';
 
     var apiResults = {"targetScanResult":[{"targetIp":"10.56.96.92","detectedAnomalies":[{"detectionTime":1686665764,"detectionType":"weakCredentialsDecision","description":"weak credentials were identified"}]}],"status":"Success"};
+    let state;
 
     window.addEventListener('load', () => {
-        // console.info('All resources finished loading.');
-        console.info('angularjs app instance test');
         window.setTimeout(() => {
             window.app = getAngularInstance();
         }, 2000);
@@ -23,8 +22,10 @@
 
 
     function getAngularInstance() {
-        console.group('getVueAppInstance');
-        let state = angular.element(document.body).injector().get('viewStore').getState();
+        console.group('getAngularAppInstance');
+        state = angular.element(document.body).injector().get('viewStore').getState();
+
+        console.log("Round: " + getRoundId());
 
         state.viewTabs.scenarioTabs.push({
             id: 'security',
@@ -76,7 +77,7 @@
         var trHead = document.createElement('tr');
         trHead.setAttribute("data-v-e75a8c08","");
         trHead.appendChild(createHeader("Name"));
-        trHead.appendChild(createHeader("Date"));
+        trHead.appendChild(createHeader("Date (WEST)"));
         trHead.appendChild(createHeader("Type"));
         trHead.appendChild(createHeader("Description"));
         thead.appendChild(trHead);
@@ -110,10 +111,12 @@
         tr.classList.add('te-table-row-clickable');
         tr.classList.add('row-focus-no-outline');
 
-        tr.appendChild(createHeader("SD-AVC Test"));
-        tr.appendChild(createHeader(new Date(result.detectionTime * 1000)));
-        tr.appendChild(createHeader(result.detectionType));
-        tr.appendChild(createHeader(result.description));
+        tr.appendChild(createColumn("SD-AVC Test"));
+
+        var d = new Date(result.detectionTime * 1000);
+        tr.appendChild(createColumn(d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()));
+        tr.appendChild(createColumn(result.detectionType));
+        tr.appendChild(createColumn(result.description));
 
         return tr;
     }
@@ -126,6 +129,7 @@
         td.classList.add('te-table-column-align-left');
         td.classList.add('multi-test-table-column');
         td.append(value);
+        return td;
     }
 
     function createHeader(name) {
@@ -152,6 +156,10 @@
 
         th.appendChild(outerDiv);
         return th;
+    }
+
+    function getRoundId() {
+        return state.roundId;
     }
 
 })();
