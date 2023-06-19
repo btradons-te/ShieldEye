@@ -1,8 +1,9 @@
 package com.cisco.te.shieldeye;
 
+import com.cisco.te.shieldeye.sdavc.client.UnauthPorts;
+import com.cisco.te.shieldeye.sdavc.client.WeakCred;
 import com.cisco.te.shieldeye.sdavc.client.model.*;
 import com.google.gson.Gson;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -37,13 +38,23 @@ public class ShieldEyeUtils {
         }
     }
 
-    public static List<SharedAnomaly> createRedAnomaliesFromList(Anomalies anomalies) {
-        long oneDay = 24*60*60;
-        List<SharedAnomaly> anomalyReducedList = new ArrayList<>();
+    public static List<AnomalyReduced> createReducedAnomalies(Anomalies anomalies, boolean showSensitive) {
+        List<AnomalyReduced> anomalyReducedList = new ArrayList<>();
         AnomalyReduced ar = new AnomalyReduced();
-        ar.setDescription(anomalies.getAnomalyDecision().get(0).getDescription());
+//        long oneDay = 24 * 60 * 60;
+        String detectionType = anomalies.getAnomalyDecision().get(0).getAnomalyType();
+        String description = anomalies.getAnomalyDecision().get(0).getDescription();
+        if (detectionType.equals("weakCredentialsDecision")) {
+            WeakCred wc = new WeakCred(anomalies.getDetectedAnomalies().get(0), showSensitive);
+            description += ". " + wc;
+        } else if(detectionType.equals("unauthorizedPorts")){
+            UnauthPorts up = new UnauthPorts(anomalies.getDetectedAnomalies().get(0), showSensitive);
+            description += ". " + up;
+        }
+        ar.setDescription(description);
         ar.setDetectionType(anomalies.getAnomalyDecision().get(0).getAnomalyType());
-        ar.setDetectionTime(Instant.now().getEpochSecond()-oneDay);
+//        ar.setDetectionTime(Instant.now().getEpochSecond() - oneDay);
+        ar.setDetectionTime(Instant.now().getEpochSecond());
         anomalyReducedList.add(ar);
         return anomalyReducedList;
     }

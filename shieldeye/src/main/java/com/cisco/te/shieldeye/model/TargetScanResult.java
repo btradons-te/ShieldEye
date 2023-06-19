@@ -3,6 +3,7 @@
  */
 package com.cisco.te.shieldeye.model;
 
+import com.cisco.te.shieldeye.sdavc.client.model.AnomalyReduced;
 import com.cisco.te.shieldeye.sdavc.client.model.DetectedAnomaly;
 import com.cisco.te.shieldeye.sdavc.client.model.SharedAnomaly;
 
@@ -45,7 +46,7 @@ public class TargetScanResult {
 	 * Add detected anomalies list
 	 * @param anomalies
 	 */
-	public void add(List<SharedAnomaly> anomalies) {
+	public void add(List<AnomalyReduced> anomalies) {
 		if (this.detectedAnomalies == null) {
 			this.detectedAnomalies = new ArrayList<>();
 		}

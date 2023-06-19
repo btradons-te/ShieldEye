@@ -25,11 +25,11 @@ public class TeTest {
         return String.format("Test: %s, type: %s, server: %s",testName,type,server);
     }
 
-    public boolean isRelevant(long testEndTime) {
+    public boolean isRelevant(long timeFrameEnd) {
         try {
             Date date = df.parse(this.dateRaw);
             long createdTestEpoch = date.getTime()/1000; // epoch time in second
-            return createdTestEpoch < testEndTime;
+            return createdTestEpoch < timeFrameEnd;
         } catch (Exception e){
             return true;
         }
