@@ -52,6 +52,7 @@ public class SdavcSecurityService {
 
 			Map<String, TargetScanResult> scanResultsPerDevice = new HashMap<>();
 			for (DcsDevice dcsDevice : devices) {
+				String lastHit = dcsDevice.getLastHitsTime();
 				String deviceIp = dcsDevice.getMetadata().getProbeData().getIp();
 				if (targetIps.contains(deviceIp)) {
 					TargetScanResult deviceScanResult;
@@ -63,7 +64,7 @@ public class SdavcSecurityService {
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
 					Anomalies anomalies = dcsDevice.getMetadata().getAnomalies();
-					List<AnomalyReduced> reducedAnomalies = ShieldEyeUtils.createReducedAnomalies(anomalies, showSensitive);
+					List<AnomalyReduced> reducedAnomalies = ShieldEyeUtils.createReducedAnomalies(lastHit, anomalies, showSensitive);
 					deviceScanResult.add(reducedAnomalies);
 				}
 			}
@@ -93,7 +94,8 @@ public class SdavcSecurityService {
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
 					Anomalies anomaliesRaw = dcsDevice.getMetadata().getAnomalies();
-					List<AnomalyReduced> anomalies = ShieldEyeUtils.createReducedAnomalies(anomaliesRaw, showSensitive);
+					String lastHitTime = dcsDevice.getLastHitsTime();
+					List<AnomalyReduced> anomalies = ShieldEyeUtils.createReducedAnomalies(lastHitTime, anomaliesRaw, showSensitive);
 					deviceScanResult.add(anomalies);
 				}
 			}

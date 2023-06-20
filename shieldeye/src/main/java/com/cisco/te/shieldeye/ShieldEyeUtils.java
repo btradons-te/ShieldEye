@@ -29,7 +29,7 @@ public class ShieldEyeUtils {
 
     public static List<DcsDevice> getMockedDevices() {
         try {
-            String json = new String(Files.readAllBytes(Paths.get("src/test/resources/dcsDevicesResponse.json")));
+            String json = new String(Files.readAllBytes(Paths.get("src/test/resources/two_responses.json")));
             List<DcsDevice> devices = Arrays.asList(new Gson().fromJson(json, DcsDevice[].class));
             return devices;
         } catch (IOException io) {
@@ -38,24 +38,30 @@ public class ShieldEyeUtils {
         }
     }
 
-    public static List<AnomalyReduced> createReducedAnomalies(Anomalies anomalies, boolean showSensitive) {
+    public static List<AnomalyReduced> createReducedAnomalies(String lastHit, Anomalies anomalies, boolean showSensitive) {
         List<AnomalyReduced> anomalyReducedList = new ArrayList<>();
-        AnomalyReduced ar = new AnomalyReduced();
+
 //        long oneDay = 24 * 60 * 60;
-        String detectionType = anomalies.getAnomalyDecision().get(0).getAnomalyType();
-        String description = anomalies.getAnomalyDecision().get(0).getDescription();
-        if (detectionType.equals("weakCredentialsDecision")) {
-            WeakCred wc = new WeakCred(anomalies.getDetectedAnomalies().get(0), showSensitive);
-            description += ". " + wc;
-        } else if(detectionType.equals("unauthorizedPorts")){
-            UnauthPorts up = new UnauthPorts(anomalies.getDetectedAnomalies().get(0), showSensitive);
-            description += ". " + up;
-        }
-        ar.setDescription(description);
-        ar.setDetectionType(anomalies.getAnomalyDecision().get(0).getAnomalyType());
+        for (int i=0;i<anomalies.getAnomalyDecision().size(); i++){
+            AnomalyReduced ar = new AnomalyReduced();
+            DetectedAnomaly da = anomalies.getDetectedAnomalies().get(i);
+            String detectionType = da.getDetectionType();
+            String description = da.getReason();
+            if (detectionType.equals("weakCredentials")) {
+                WeakCred wc = new WeakCred(da, showSensitive);
+                description += ". " + wc;
+            } else if(detectionType.equals("unauthorizedPorts")){
+                UnauthPorts up = new UnauthPorts(da, showSensitive);
+                description += ". " + up;
+            }
+            ar.setDescription(description);
+            ar.setDetectionType(da.getDetectionType());
 //        ar.setDetectionTime(Instant.now().getEpochSecond() - oneDay);
-        ar.setDetectionTime(Instant.now().getEpochSecond());
-        anomalyReducedList.add(ar);
+            ar.setDetectionTime(Instant.now().getEpochSecond());
+            ar.setLastHit(lastHit);
+            anomalyReducedList.add(ar);
+        }
+
         return anomalyReducedList;
     }
 }
