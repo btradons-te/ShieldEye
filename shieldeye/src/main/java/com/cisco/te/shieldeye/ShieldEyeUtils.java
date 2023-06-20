@@ -38,11 +38,11 @@ public class ShieldEyeUtils {
         }
     }
 
-    public static List<AnomalyReduced> createReducedAnomalies(String lastHit, Anomalies anomalies, boolean showSensitive) {
+    public static List<AnomalyReduced> createReducedAnomalies(long lastHit, Anomalies anomalies, boolean showSensitive) {
         List<AnomalyReduced> anomalyReducedList = new ArrayList<>();
 
-//        long oneDay = 24 * 60 * 60;
-        for (int i=0;i<anomalies.getAnomalyDecision().size(); i++){
+        long oneDay = 24 * 60 * 60;
+        for (int i = 0; i < anomalies.getAnomalyDecision().size(); i++) {
             AnomalyReduced ar = new AnomalyReduced();
             DetectedAnomaly da = anomalies.getDetectedAnomalies().get(i);
             String detectionType = da.getDetectionType();
@@ -50,14 +50,14 @@ public class ShieldEyeUtils {
             if (detectionType.equals("weakCredentials")) {
                 WeakCred wc = new WeakCred(da, showSensitive);
                 description += ". " + wc;
-            } else if(detectionType.equals("unauthorizedPorts")){
+            } else if (detectionType.equals("unauthorizedPorts")) {
                 UnauthPorts up = new UnauthPorts(da, showSensitive);
                 description += ". " + up;
             }
             ar.setDescription(description);
             ar.setDetectionType(da.getDetectionType());
-//        ar.setDetectionTime(Instant.now().getEpochSecond() - oneDay);
-            ar.setDetectionTime(Instant.now().getEpochSecond());
+            ar.setDetectionTime(Instant.now().getEpochSecond() - oneDay);
+//            ar.setDetectionTime(Instant.now().getEpochSecond());
             ar.setLastHit(lastHit);
             anomalyReducedList.add(ar);
         }
@@ -65,19 +65,18 @@ public class ShieldEyeUtils {
         return anomalyReducedList;
     }
 
-    public static String getRandomTimeFromStart(long windowStart) {
+    public static long getRandomTimeFromStart(long windowStart) {
         Random rand = new Random();
         // Setting the upper bound to generate the
         // random numbers in specific range
         int upperbound = 25;
         int int_random = rand.nextInt(upperbound);
         long timeInEpoch = windowStart + int_random;
-        Date date = new Date(timeInEpoch*1000);
-//        2023-06-20T12:17:33Z
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        format.setTimeZone(TimeZone.getTimeZone("Etc/UTC"));
-        String formatted = format.format(date);
-        return formatted;
+//        Date date = new Date(timeInEpoch*1000);
+//        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String formatted = format.format(date);
+//        return formatted;
+        return timeInEpoch;
     }
 }
 
