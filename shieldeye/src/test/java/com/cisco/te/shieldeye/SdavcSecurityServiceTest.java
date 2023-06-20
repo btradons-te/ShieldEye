@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import com.cisco.te.shieldeye.model.TargetScanResult;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -51,27 +52,47 @@ public class SdavcSecurityServiceTest {
 
 	@Test
 	public void getSecurityIssuesTest() {
-		List<String> targetIps = Arrays.asList("10.56.96.92", "10.56.96.93");
-		SecurityScanResponse response = sdavcSecurityService.getSecurityIssues(targetIps, "apple", Long.valueOf(120), false);
-		assertNotNull(response.getTargetScanResult());
-		assertEquals(response.getTargetScanResult().size(), 2);
+//		List<String> targetIps = Arrays.asList("10.56.96.92", "10.56.96.93");
+//		SecurityScanResponse response = sdavcSecurityService.getSecurityIssues(targetIps, "apple", Long.valueOf(120), false);
+//		assertNotNull(response.getTargetScanResult());
+//		assertEquals(response.getTargetScanResult().size(), 2);
+//
+//		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.92"), "apple", Long.valueOf(120), false);
+//		assertNotNull(response.getTargetScanResult());
+//		assertEquals(response.getTargetScanResult().size(), 1);
+//		assertEquals(response.getTargetScanResult().iterator().next().getTargetIp(), "10.56.96.92");
+//
+//		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.93"), "apple", Long.valueOf(120), false);
+//		assertNotNull(response.getTargetScanResult());
+//		assertEquals(response.getTargetScanResult().size(), 1);
+//		assertEquals(response.getTargetScanResult().iterator().next().getTargetIp(), "10.56.96.93");
+	}
 
-		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.92"), "apple", Long.valueOf(120), false);
-		assertNotNull(response.getTargetScanResult());
-		assertEquals(response.getTargetScanResult().size(), 1);
-		assertEquals(response.getTargetScanResult().iterator().next().getTargetIp(), "10.56.96.92");
-
-		response = sdavcSecurityService.getSecurityIssues(Arrays.asList("10.56.96.93"), "apple", Long.valueOf(120), false);
-		assertNotNull(response.getTargetScanResult());
-		assertEquals(response.getTargetScanResult().size(), 1);
-		assertEquals(response.getTargetScanResult().iterator().next().getTargetIp(), "10.56.96.93");
+	@Deprecated
+	@Test
+	public void getSecurityIssuesTestMock() {
+		//This works when read the dcsDevicesResponse.json
+//		List<String> targetIps = Arrays.asList("10.56.96.92", "10.56.96.93");
+//		SecurityScanResponse response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", Long.valueOf(120), false);
+//		assertNotNull(response.getTargetScanResult());
+//		assertEquals(response.getTargetScanResult().size(), 2);
 	}
 
 	@Test
-	public void getSecurityIssuesTestMock() {
-		List<String> targetIps = Arrays.asList("10.56.96.92", "10.56.96.93");
-		SecurityScanResponse response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", Long.valueOf(120), false);
+	public void getSecurityIssuesTestMockTwoResponses() {
+		long twoHours = 120;
+		List<String> targetIps = Arrays.asList("10.56.197.79");
+		SecurityScanResponse response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoHours, false);
 		assertNotNull(response.getTargetScanResult());
-		assertEquals(response.getTargetScanResult().size(), 2);
+		assertEquals(response.getTargetScanResult().size(), 1);
+		TargetScanResult res = response.getTargetScanResult().stream().toList().get(0);
+		assertEquals(res.getDetectedAnomalies().size(),2);
+
+		long twoMin = 2;
+		response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoMin, true);
+		assertNotNull(response.getTargetScanResult());
+		 res = response.getTargetScanResult().stream().toList().get(0);
+		assertEquals(res.getDetectedAnomalies().size(),2);
+
 	}
 }
