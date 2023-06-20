@@ -3,6 +3,7 @@ package com.cisco.te.shieldeye;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,7 +55,10 @@ public class ShieldEyeController {
         SecurityScanResponse scan;
         if (isMock) {
             logger.info("Mock - Potential servers are {}", targetIps);
-            scan = sdavcSecurityService.getSecurityIssuesMock(targetIps, segment, periodInMinutes, showSensitiveData);
+            if (Instant.now().getEpochSecond()-windowStart<24*60*60){
+                return sdavcSecurityService.getEmptySecurityIssues();
+            }
+            scan = sdavcSecurityService.getSecurityIssuesMock(targetIps, segment, periodInMinutes, showSensitiveData, windowStart);
         } else {
             scan = sdavcSecurityService.getSecurityIssues(targetIps, segment, periodInMinutes, showSensitiveData);
         }

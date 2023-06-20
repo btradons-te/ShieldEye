@@ -82,14 +82,14 @@ public class SdavcSecurityServiceTest {
 	public void getSecurityIssuesTestMockTwoResponses() {
 		long twoHours = 120;
 		List<String> targetIps = Arrays.asList("10.56.197.79");
-		SecurityScanResponse response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoHours, false);
+		SecurityScanResponse response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoHours, false, 1686731700);
 		assertNotNull(response.getTargetScanResult());
 		assertEquals(response.getTargetScanResult().size(), 1);
 		TargetScanResult res = response.getTargetScanResult().stream().toList().get(0);
 		assertEquals(res.getDetectedAnomalies().size(),2);
 
 		long twoMin = 2;
-		response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoMin, true);
+		response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoMin, true, 1686731700);
 		assertNotNull(response.getTargetScanResult());
 		 res = response.getTargetScanResult().stream().toList().get(0);
 		assertEquals(res.getDetectedAnomalies().size(),2);
