@@ -10,8 +10,7 @@
 
 (function() {
     'use strict';
-    let state;
-
+    
     window.addEventListener('load', () => {
         window.setTimeout(() => {
             window.app = getAngularInstance();
@@ -21,9 +20,7 @@
 
     function getAngularInstance() {
         console.group('getAngularAppInstance');
-        state = angular.element(document.body).injector().get('viewStore').getState();
-
-        console.log("Round: " + getRoundId());
+        let state = getCurrentState()
 
         state.viewTabs.scenarioTabs.push({
             id: 'security',
@@ -174,7 +171,12 @@
     }
 
     function getRoundId() {
+        let state = getCurrentState()
         return state.roundId;
+    }
+
+    function getCurrentState() {
+        return angular.element(document.body).injector().get('viewStore').getState();
     }
 
 })();
