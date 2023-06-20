@@ -1,5 +1,6 @@
 package com.cisco.te.shieldeye;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -75,8 +76,15 @@ public class SdavcSecurityService {
 		return scanResponse;
 	}
 
+	public SecurityScanResponse getEmptySecurityIssues() {
+		SecurityScanResponse scanResponse = new SecurityScanResponse();
+		scanResponse.setTargetScanResult(new ArrayList<>());
+		scanResponse.setStatus("Success");
+		return scanResponse;
+	}
 
-	public SecurityScanResponse getSecurityIssuesMock(List<String> targetIps, String segment, Long periodInMinutes, boolean showSensitive) {
+
+	public SecurityScanResponse getSecurityIssuesMock(List<String> targetIps, String segment, Long periodInMinutes, boolean showSensitive, long windowStart) {
 		SecurityScanResponse scanResponse = new SecurityScanResponse();
 		try {
 			List<DcsDevice> devices = ShieldEyeUtils.getMockedDevices();
@@ -94,7 +102,8 @@ public class SdavcSecurityService {
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
 					Anomalies anomaliesRaw = dcsDevice.getMetadata().getAnomalies();
-					String lastHitTime = dcsDevice.getLastHitsTime();
+//					String lastHitTime = dcsDevice.getLastHitsTime();
+					String lastHitTime = ShieldEyeUtils.getRandomTimeFromStart(windowStart);
 					List<AnomalyReduced> anomalies = ShieldEyeUtils.createReducedAnomalies(lastHitTime, anomaliesRaw, showSensitive);
 					deviceScanResult.add(anomalies);
 				}

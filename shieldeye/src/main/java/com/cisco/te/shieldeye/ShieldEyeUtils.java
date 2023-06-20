@@ -8,10 +8,10 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 public class ShieldEyeUtils {
@@ -63,6 +63,21 @@ public class ShieldEyeUtils {
         }
 
         return anomalyReducedList;
+    }
+
+    public static String getRandomTimeFromStart(long windowStart) {
+        Random rand = new Random();
+        // Setting the upper bound to generate the
+        // random numbers in specific range
+        int upperbound = 25;
+        int int_random = rand.nextInt(upperbound);
+        long timeInEpoch = windowStart + int_random;
+        Date date = new Date(timeInEpoch*1000);
+//        2023-06-20T12:17:33Z
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        format.setTimeZone(TimeZone.getTimeZone("Etc/UTC"));
+        String formatted = format.format(date);
+        return formatted;
     }
 }
 
