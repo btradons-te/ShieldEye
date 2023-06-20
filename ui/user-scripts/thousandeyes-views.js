@@ -40,6 +40,14 @@
                 createTableFromAPIResponse();
             }, 1000);
         };
+        
+        // Refresh the security tab on timeline click
+        let timelineElement = document.querySelector("div.w-100.timeline-row.timeline-container");
+        timelineElement.onclick = function(){
+            window.setTimeout(() => {
+                createTableFromAPIResponse();
+            }, 1000);
+        };
     }
 
     // Fetch the SDAVC test results for given time window and create table
@@ -52,7 +60,8 @@
         fetch(url).then(response => response.json())
             .then(response => {
                     let tabPane = document.querySelector("#main-container > div > div > div.bottom-row.te-panel.w-100 > div > div > ng-include > view-tabs > div > div > div.tab-pane.active > div > div > div");
-                    tabPane.innerHtml
+                    // Clear any previous tab state
+                    tabPane.innerHTML = "";
                     tabPane.append(tableCreate(response));
                 }).catch(e => {
                     console.error(e);
