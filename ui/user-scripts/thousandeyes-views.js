@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Hack Day 2023 idea around enhancing the tests with security context.
 // @author       You
-// @match        https://app.stg.thousandeyes.com/view/cloud-and-enterprise-agents/*
+// @match        https://app.thousandeyes.com/view/cloud-and-enterprise-agents/*
 // @grant        none
 // ==/UserScript==
 
@@ -54,7 +54,7 @@
     function createTableFromAPIResponse() {
         const windowStart = getRoundId()
         const windowSize = 5
-        const url = `http://10.56.216.113:7070/security-scan?windowStart=${windowStart}&windowSize=${windowSize}&targetIp=10.56.96.93`
+        const url = `http://10.56.216.113:7070/security-scan?windowStart=${windowStart}&windowSize=${windowSize}&targetIp=10.56.197.79`
 
         console.log(`Calling SDAVC API with windowStart/windowSize: ${windowStart}/${windowSize}`)
         fetch(url).then(response => response.json())
@@ -98,7 +98,7 @@
         var trHead = document.createElement('tr');
         trHead.setAttribute("data-v-e75a8c08","");
         trHead.appendChild(createHeader("Name"));
-        trHead.appendChild(createHeader("Date (WEST)"));
+        trHead.appendChild(createHeader("Date"));
         trHead.appendChild(createHeader("Type"));
         trHead.appendChild(createHeader("Description"));
         thead.appendChild(trHead);
@@ -134,7 +134,7 @@
 
         tr.appendChild(createColumn("SD-AVC Test"));
 
-        var d = new Date(result.detectionTime * 1000);
+        var d = new Date(result.lastHit * 1000);
         tr.appendChild(createColumn(d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()));
         tr.appendChild(createColumn(result.detectionType));
         tr.appendChild(createColumn(result.description));
