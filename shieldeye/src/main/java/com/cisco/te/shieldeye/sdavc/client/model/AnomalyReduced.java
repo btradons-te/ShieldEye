@@ -7,7 +7,7 @@ public class AnomalyReduced extends SharedAnomaly {
 
     @SerializedName("lastHit")
     @Expose
-    private String lastHit;
+    private long lastHit;
 
     @SerializedName("detectionTime")
     @Expose
@@ -41,11 +41,11 @@ public class AnomalyReduced extends SharedAnomaly {
         this.description = description;
     }
 
-    public String getLastHit() {
+    public long getLastHit() {
         return lastHit;
     }
 
-    public void setLastHit(String lastHit) {
+    public void setLastHit(long lastHit) {
         this.lastHit = lastHit;
     }
 
