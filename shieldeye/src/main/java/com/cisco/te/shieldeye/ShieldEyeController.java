@@ -55,7 +55,7 @@ public class ShieldEyeController {
         SecurityScanResponse scan;
         if (isMock) {
             logger.info("Mock - Potential servers are {}", targetIps);
-            if (Instant.now().getEpochSecond()-windowStart<24*60*60){
+            if (Instant.now().getEpochSecond()-windowStart<4*60*60){
                 return sdavcSecurityService.getEmptySecurityIssues();
             }
             scan = sdavcSecurityService.getSecurityIssuesMock(targetIps, segment, periodInMinutes, showSensitiveData, windowStart);
