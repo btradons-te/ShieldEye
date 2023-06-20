@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class AnomalyReduced extends SharedAnomaly {
 
+    @SerializedName("lastHit")
+    @Expose
+    private String lastHit;
+
     @SerializedName("detectionTime")
     @Expose
     private Long detectionTime;
@@ -35,6 +39,14 @@ public class AnomalyReduced extends SharedAnomaly {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLastHit() {
+        return lastHit;
+    }
+
+    public void setLastHit(String lastHit) {
+        this.lastHit = lastHit;
     }
 
     @SerializedName("description")

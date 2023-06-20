@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         ThousandEyes ShieldEye PoC
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
+// @description  Hack Day 2023 idea around enhancing the tests with security context.
 // @author       You
 // @match        https://app.stg.thousandeyes.com/view/cloud-and-enterprise-agents/*
 // @grant        none
@@ -10,12 +10,8 @@
 
 (function() {
     'use strict';
-
-    var apiResults = {"targetScanResult":[{"targetIp":"10.56.96.92","detectedAnomalies":[{"detectionTime":1686665764,"detectionType":"weakCredentialsDecision","description":"weak credentials were identified"}]}],"status":"Success"};
-
+    
     window.addEventListener('load', () => {
-        // console.info('All resources finished loading.');
-        console.info('angularjs app instance test');
         window.setTimeout(() => {
             window.app = getAngularInstance();
         }, 2000);
@@ -23,8 +19,8 @@
 
 
     function getAngularInstance() {
-        console.group('getVueAppInstance');
-        let state = angular.element(document.body).injector().get('viewStore').getState();
+        console.group('getAngularAppInstance');
+        let state = getCurrentState()
 
         state.viewTabs.scenarioTabs.push({
             id: 'security',
@@ -41,14 +37,31 @@
         let securityTab = document.querySelector("#main-container > div > div > div.bottom-row.te-panel.w-100 > div > div > ng-include > view-tabs > div > ul > li.security-tab > a");
         securityTab.onclick = function(){
             window.setTimeout(() => {
-                let tabPane = document.querySelector("#main-container > div > div > div.bottom-row.te-panel.w-100 > div > div > ng-include > view-tabs > div > div > div.tab-pane.active > div > div > div");
-                tabPane.innerHtml
-                tabPane.append(tableCreate());
+                createTableFromAPIResponse();
             }, 1000);
         };
     }
 
-    function tableCreate() {
+    // Fetch the SDAVC test results for given time window and create table
+    function createTableFromAPIResponse() {
+        const windowStart = getRoundId()
+        const windowSize = 5
+        const url = `http://10.56.216.113:7070/security-scan?windowStart=${windowStart}&windowSize=${windowSize}&targetIp=10.56.96.93`
+
+        console.log(`Calling SDAVC API with windowStart/windowSize: ${windowStart}/${windowSize}`)
+        fetch(url).then(response => response.json())
+            .then(response => {
+                    let tabPane = document.querySelector("#main-container > div > div > div.bottom-row.te-panel.w-100 > div > div > ng-include > view-tabs > div > div > div.tab-pane.active > div > div > div");
+                    tabPane.innerHtml
+                    tabPane.append(tableCreate(response));
+                }).catch(e => {
+                    console.error(e);
+                }).catch(error => {
+            console.error(error);
+        });
+    }
+
+    function tableCreate(apiResults) {
         var contentContainerDiv = document.createElement('div');
         contentContainerDiv.setAttribute("data-v-5a18f565","");
         contentContainerDiv.setAttribute("data-v-35ff5272","");
@@ -76,7 +89,7 @@
         var trHead = document.createElement('tr');
         trHead.setAttribute("data-v-e75a8c08","");
         trHead.appendChild(createHeader("Name"));
-        trHead.appendChild(createHeader("Date"));
+        trHead.appendChild(createHeader("Date (WEST)"));
         trHead.appendChild(createHeader("Type"));
         trHead.appendChild(createHeader("Description"));
         thead.appendChild(trHead);
@@ -110,10 +123,12 @@
         tr.classList.add('te-table-row-clickable');
         tr.classList.add('row-focus-no-outline');
 
-        tr.appendChild(createHeader("SD-AVC Test"));
-        tr.appendChild(createHeader(new Date(result.detectionTime * 1000)));
-        tr.appendChild(createHeader(result.detectionType));
-        tr.appendChild(createHeader(result.description));
+        tr.appendChild(createColumn("SD-AVC Test"));
+
+        var d = new Date(result.detectionTime * 1000);
+        tr.appendChild(createColumn(d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()));
+        tr.appendChild(createColumn(result.detectionType));
+        tr.appendChild(createColumn(result.description));
 
         return tr;
     }
@@ -126,6 +141,7 @@
         td.classList.add('te-table-column-align-left');
         td.classList.add('multi-test-table-column');
         td.append(value);
+        return td;
     }
 
     function createHeader(name) {
@@ -152,6 +168,15 @@
 
         th.appendChild(outerDiv);
         return th;
+    }
+
+    function getRoundId() {
+        let state = getCurrentState()
+        return state.roundId;
+    }
+
+    function getCurrentState() {
+        return angular.element(document.body).injector().get('viewStore').getState();
     }
 
 })();

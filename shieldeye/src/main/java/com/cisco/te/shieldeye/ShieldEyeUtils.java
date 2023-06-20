@@ -1,8 +1,9 @@
 package com.cisco.te.shieldeye;
 
+import com.cisco.te.shieldeye.sdavc.client.UnauthPorts;
+import com.cisco.te.shieldeye.sdavc.client.WeakCred;
 import com.cisco.te.shieldeye.sdavc.client.model.*;
 import com.google.gson.Gson;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,7 +29,7 @@ public class ShieldEyeUtils {
 
     public static List<DcsDevice> getMockedDevices() {
         try {
-            String json = new String(Files.readAllBytes(Paths.get("src/test/resources/dcsDevicesResponse.json")));
+            String json = new String(Files.readAllBytes(Paths.get("src/test/resources/two_responses.json")));
             List<DcsDevice> devices = Arrays.asList(new Gson().fromJson(json, DcsDevice[].class));
             return devices;
         } catch (IOException io) {
@@ -37,14 +38,30 @@ public class ShieldEyeUtils {
         }
     }
 
-    public static List<SharedAnomaly> createRedAnomaliesFromList(Anomalies anomalies) {
-        long oneDay = 24*60*60;
-        List<SharedAnomaly> anomalyReducedList = new ArrayList<>();
-        AnomalyReduced ar = new AnomalyReduced();
-        ar.setDescription(anomalies.getAnomalyDecision().get(0).getDescription());
-        ar.setDetectionType(anomalies.getAnomalyDecision().get(0).getAnomalyType());
-        ar.setDetectionTime(Instant.now().getEpochSecond()-oneDay);
-        anomalyReducedList.add(ar);
+    public static List<AnomalyReduced> createReducedAnomalies(String lastHit, Anomalies anomalies, boolean showSensitive) {
+        List<AnomalyReduced> anomalyReducedList = new ArrayList<>();
+
+//        long oneDay = 24 * 60 * 60;
+        for (int i=0;i<anomalies.getAnomalyDecision().size(); i++){
+            AnomalyReduced ar = new AnomalyReduced();
+            DetectedAnomaly da = anomalies.getDetectedAnomalies().get(i);
+            String detectionType = da.getDetectionType();
+            String description = da.getReason();
+            if (detectionType.equals("weakCredentials")) {
+                WeakCred wc = new WeakCred(da, showSensitive);
+                description += ". " + wc;
+            } else if(detectionType.equals("unauthorizedPorts")){
+                UnauthPorts up = new UnauthPorts(da, showSensitive);
+                description += ". " + up;
+            }
+            ar.setDescription(description);
+            ar.setDetectionType(da.getDetectionType());
+//        ar.setDetectionTime(Instant.now().getEpochSecond() - oneDay);
+            ar.setDetectionTime(Instant.now().getEpochSecond());
+            ar.setLastHit(lastHit);
+            anomalyReducedList.add(ar);
+        }
+
         return anomalyReducedList;
     }
 }

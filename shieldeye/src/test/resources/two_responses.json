@@ -1,0 +1,166 @@
+[
+  {
+    "segment": "apple",
+    "key": "A0:36:9F:71:EA:FD",
+    "lastSyncTime": "1970-01-01T00:00:00Z",
+    "lastClearTime": "1970-01-01T00:00:00Z",
+    "lastHitsTime": "2023-06-20T12:17:33Z",
+    "profilingTime": "2023-06-20T12:25:37Z",
+    "probeChangeTime": "2023-06-20T12:25:37Z",
+    "hitRate": 1,
+    "metadata": {
+      "probeData": {
+        "ip": "10.56.197.79",
+        "userAgent": "ss_test",
+        "macAddress": "A0:36:9F:71:EA:FD",
+        "nmapScanResult": [
+          "{\"tcp\":{\"openPorts\":[\"22\"],\"scanTime\":1687264481022,\"scanIds\":[\"shiledEye\"]},\"scannedIp\":\"10.56.197.79\",\"scanTime\":1687263937536,\"reachable\":true}"
+        ],
+        "vrf": "global",
+        "type": "create",
+        "weakCredentialsScanResult": [
+          "{\"scanResults\":[{\"protocol\":\"ssh\",\"version\":\"v1/v2\",\"port\":22,\"scanIds\":[\"shiledEye\"],\"scanTime\":1687264480548},{\"protocol\":\"telnet\",\"version\":\"\",\"port\":23,\"scanIds\":[\"shiledEye\"],\"scanTime\":1687264480820}],\"scannedIp\":\"10.56.197.79\",\"scanTime\":1687264480820,\"reachable\":true}"
+        ]
+      },
+      "probeSources": {
+        "ip": "nbar",
+        "userAgent": "nbar"
+      },
+      "classificationData": {
+        "oui": [
+          "Intel Corporate"
+        ],
+        "hardwareModel": [
+          "Intel-Device"
+        ],
+        "pluginId": [
+          "65.1"
+        ],
+        "ouiShort": [
+          "IntelCor"
+        ],
+        "hardwareManufacturer": [
+          "Intel Corporation"
+        ],
+        "confidenceHardwareManufacturer": [
+          "30"
+        ],
+        "confidenceHardwareModel": [
+          "30"
+        ],
+        "matchedRules": {
+          "hardwareModel": {
+            "ruleId": "macAddressOuiManufacturerResolverRule",
+            "ruleType": "System"
+          },
+          "hardwareManufacturer": {
+            "ruleId": "macAddressOuiManufacturerResolverRule",
+            "ruleType": "System"
+          }
+        }
+      },
+      "anomalies": {
+        "anomalyDecision": [
+          {
+            "anomalyType": "unauthorizedPortsDecision",
+            "severity": 80,
+            "confidence": 100,
+            "description": "unauthorized ports were identified",
+            "detectionID": [
+              "1543"
+            ]
+          },
+          {
+            "anomalyType": "weakCredentialsDecision",
+            "severity": 80,
+            "confidence": 100,
+            "description": "weak credentials were identified",
+            "detectionID": [
+              "1643"
+            ]
+          }
+        ],
+        "detectedAnomalies": [
+          {
+            "detectionType": "weakCredentials",
+            "detectionID": "1643",
+            "reason": "weak credentials were identified",
+            "detectionTime": 1687263887638,
+            "severity": 80,
+            "confidence": 100,
+            "sdavcReason": "weak credentials were identified",
+            "anomalyProbes": [
+              {
+                "protocol": [
+                  "ssh"
+                ],
+                "weakPassword": [
+                  "password"
+                ],
+                "port": [
+                  "22"
+                ],
+                "scannedIp": [
+                  "10.56.197.79"
+                ],
+                "scanNames": [
+                  "shiledEye"
+                ],
+                "weakUserName": [
+                  "admin"
+                ],
+                "version": [
+                  "v1/v2"
+                ],
+                "detectionTime": [
+                  "1687263886687"
+                ]
+              }
+            ],
+            "sources": [
+              "protocol",
+              "weakPassword",
+              "port",
+              "scannedIp",
+              "scanNames",
+              "weakUserName",
+              "version",
+              "detectionTime"
+            ]
+          },
+          {
+            "detectionType": "unauthorizedPorts",
+            "detectionID": "1543",
+            "reason": "unauthorized ports were identified",
+            "detectionTime": 1687263937734,
+            "severity": 80,
+            "confidence": 100,
+            "sdavcReason": "unauthorized ports were identified",
+            "anomalyProbes": [
+              {
+                "scanTcpNames": [
+                  "shiledEye"
+                ],
+                "unauthorizedTcpPortsDetectionTime": [
+                  "1687263937734"
+                ],
+                "scannedIp": [
+                  "10.56.197.79"
+                ],
+                "unauthorizedTcpPorts": [
+                  "22"
+                ]
+              }
+            ],
+            "sources": [
+              "unauthorizedTcpPortsDetectionTime",
+              "scannedIp",
+              "scanTcpNames",
+              "unauthorizedTcpPorts"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

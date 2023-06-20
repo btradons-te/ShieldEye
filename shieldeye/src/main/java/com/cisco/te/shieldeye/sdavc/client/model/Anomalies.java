@@ -12,7 +12,7 @@ public class Anomalies {
     private List<AnomalyDecision> anomalyDecision;
     @SerializedName("detectedAnomalies")
     @Expose
-    private List<SharedAnomaly> detectedAnomalies;
+    private List<DetectedAnomaly> detectedAnomalies;
 
     public List<AnomalyDecision> getAnomalyDecision() {
         return anomalyDecision;
@@ -22,11 +22,11 @@ public class Anomalies {
         this.anomalyDecision = anomalyDecision;
     }
 
-    public List<SharedAnomaly> getDetectedAnomalies() {
+    public List<DetectedAnomaly> getDetectedAnomalies() {
         return detectedAnomalies;
     }
 
-    public void setDetectedAnomalies(List<SharedAnomaly> detectedAnomalies) {
+    public void setDetectedAnomalies(List<DetectedAnomaly> detectedAnomalies) {
         this.detectedAnomalies = detectedAnomalies;
     }
 
