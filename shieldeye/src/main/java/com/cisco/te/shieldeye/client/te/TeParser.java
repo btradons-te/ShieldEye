@@ -17,6 +17,14 @@ public class TeParser {
         TeTestList teTestList = null;
         try {
             teTestList = mapper.readValue(result, TeTestList.class);
+            for (TeTest teTest: teTestList.tests){
+                if (teTest.server!= null){
+                    if (teTest.server.split(":").length>1){
+                        teTest.server=teTest.server.split(":")[0];
+                    }
+                }
+                teTest.setSecScanCB(true);
+            }
         } catch (Exception e){
             System.out.println(e.toString());
         }

@@ -21,6 +21,17 @@ public class TeTest {
     @JsonProperty("createdDate") // i.e "agent-to-server"
     public String dateRaw;
 
+    public boolean isSecScanCB() {
+        return secScanCB;
+    }
+
+    public void setSecScanCB(boolean secScanCB) {
+        this.secScanCB = secScanCB;
+    }
+
+    @JsonProperty("securityScanCheckBox") // i.e "agent-to-server"
+    public boolean secScanCB;
+
     public String toString(){
         return String.format("Test: %s, type: %s, server: %s",testName,type,server);
     }

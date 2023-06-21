@@ -26,8 +26,9 @@ class TeClientTest {
     @Test
     void getTEtest() throws IOException, InterruptedException {
         List<Long> timeFrame = new ArrayList<>();
-        timeFrame.add(Instant.now().getEpochSecond());
-        timeFrame.add(Instant.now().getEpochSecond() + 300);
-        teClient.getTEtest(timeFrame);
+        long oneHour = 60*60;
+        timeFrame.add(1687336162L -7* oneHour);
+        timeFrame.add(1687336162L + 300);
+        teClient.getTEtest(timeFrame, "10.56.197.79");
     }
 }

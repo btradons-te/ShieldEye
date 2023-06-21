@@ -38,16 +38,16 @@ public class TeClient {
     }
 
     public Timestamp getTeTimestamp() throws IOException, InterruptedException {
-        HttpResponse<String> response =
-                client.send(getRequest(STATUS_URL), HttpResponse.BodyHandlers.ofString());
-        if (response.statusCode() != 200){
+        HttpResponse<String> response = client.send(getRequest(STATUS_URL), HttpResponse.BodyHandlers.ofString());
+        if (response.statusCode() != 200) {
             System.out.println("ERROR: status code " + response.statusCode());
             return null;
         }
-        Map<String,Object> result = jsonParser.parseMap(response.body());
-     return new Timestamp(Long.parseLong(result.get("timestamp").toString()));
+        Map<String, Object> result = jsonParser.parseMap(response.body());
+        return new Timestamp(Long.parseLong(result.get("timestamp").toString()));
     }
-    public List<String> getTEtest(List<Long> timeFrame) {
+
+    public List<String> getTEtest(List<Long> timeFrame, String targetIp) {
         try {
             HttpResponse<String> response = client.send(getRequestWithToken(TESTS_URL), HttpResponse.BodyHandlers.ofString());
 //            System.out.println(response.statusCode());
@@ -57,24 +57,25 @@ public class TeClient {
                 return null;
             }
             TeTestList teTestList = teParser.ParseTestResult(response.body());
+//            System.out.println("Test result --->" + teTestList.tests);
             teTestList.tests = teTestList.tests.stream().filter(t -> t.isRelevant(timeFrame.get(1))).toList();
-            Set<String> servers = getServersFromTestList(teTestList);
+            Set<String> servers = getServersFromTestList(teTestList, targetIp);
+            System.out.println("Servers --->" + servers);
             List<String> ipList = filterServers(servers);
-        return ipList;
-        }
-        catch (Exception e){
+            return ipList;
+        } catch (Exception e) {
             System.out.println(e.toString());
             return new ArrayList<>();
         }
     }
 
-    private List<String> filterServers (Set<String> servers){
+    private List<String> filterServers(Set<String> servers) {
         Pattern pattern = Pattern.compile("([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})");
         Set<String> ipList = new HashSet<>();
-        for (String server: servers){
+        for (String server : servers) {
             if (server == null) continue;
             Matcher m = pattern.matcher(server);
-            if (m.find()){
+            if (m.find()) {
                 String ip = m.group(0);
                 ipList.add(ip);
             }
@@ -82,38 +83,33 @@ public class TeClient {
         return ipList.stream().toList();
     }
 
-    public Set<String> getServersFromTestList(TeTestList teTestList){
+    public Set<String> getServersFromTestList(TeTestList teTestList, String targetIp) {
         Set<String> serversSet = new HashSet<>();
-        for (TeTest teTest: teTestList.tests){
-            serversSet.add(teTest.server);
+        for (TeTest teTest : teTestList.tests) {
+            if (teTest.server == null) {
+                continue;
+            }
+            if (teTest.server.equals(targetIp) && teTest.isSecScanCB()) {
+                System.out.println("Entered with" + teTest.server);
+                serversSet.add(teTest.server);
+            }
         }
         return serversSet;
     }
 
 
-
-    private HttpRequest getRequest(String url)  {
-        HttpRequest request = HttpRequest.newBuilder()
-                                         .uri(URI.create(url))
-                                         .timeout(Duration.ofMinutes(1))
-                                         .header("Content-Type", "application/json")
-                                         .GET().build();
+    private HttpRequest getRequest(String url) {
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).timeout(Duration.ofMinutes(1)).header("Content-Type", "application/json").GET().build();
         return request;
     }
 
-    private HttpRequest getRequestWithToken(String url)  {
-        HttpRequest request = HttpRequest.newBuilder()
-                                         .uri(URI.create(url))
-                                         .timeout(Duration.ofMinutes(1))
-                                         .header("Content-Type", "application/json")
-                                         .header("Authorization", "Bearer "+authToken)
-                                         .GET().build();
+    private HttpRequest getRequestWithToken(String url) {
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).timeout(Duration.ofMinutes(1)).header("Content-Type", "application/json").header("Authorization", "Bearer " + authToken).GET().build();
         return request;
     }
-    private void setHttpClient(){
-        client = HttpClient.newBuilder()
-                                      .version(HttpClient.Version.HTTP_2)
-                                      .build();
+
+    private void setHttpClient() {
+        client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
     }
 
 
