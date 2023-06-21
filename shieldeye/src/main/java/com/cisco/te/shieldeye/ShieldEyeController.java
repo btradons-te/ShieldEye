@@ -40,7 +40,7 @@ public class ShieldEyeController {
     public SecurityScanResponse securityScan(@RequestParam(value = "segment", defaultValue = "apple") String segment, @RequestParam(value = "windowStart", defaultValue = "1686731700") Long windowStart, @RequestParam(value = "windowSize", defaultValue = "5") Integer windowSize, @RequestParam(value = "sd-mock", defaultValue = "true") boolean isMock, @RequestParam(value = "targetIp", defaultValue = "") String targetIp) {
         logger.info("Getting security scan for segment={}, windowStart={}, windowSize={}, targetIp={}", segment, windowStart, windowSize, targetIp);
         logger.info("isMock(sd-mock): {}", isMock);
-        boolean showSensitiveData = false;
+        boolean showSensitiveData = true;
 
         List<Long> timeFrame = ShieldEyeUtils.getTimeFrame(windowStart, windowSize);
         long periodInMinutes = ShieldEyeUtils.getPeriodInMinutes(windowStart);
