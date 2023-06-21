@@ -10,6 +10,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.GZIPInputStream;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -196,11 +197,11 @@ public class SdAvcConnector extends HttpsUriConnectionTrustAllServers {
             conn = getConnectionNonSecured(urlToRead, "GET");
         }
 
-        String response = getConnectionResponse(conn);
+        String response = getConnectionResponseZip(conn);
 
         if (response.contains(LOGIN_MESSAGE)) {
             login(true);
-            response = getConnectionResponse(conn);
+            response = getConnectionResponseZip(conn);
         }
 
         if (response == null) {
@@ -317,6 +318,9 @@ public class SdAvcConnector extends HttpsUriConnectionTrustAllServers {
         con.setRequestProperty("Cookie", "JSESSIONID=" + sessionId);
         // starting from 2.1.0 use token
         con.setRequestProperty("Authorization", sessionId);
+        //con.setRequestProperty("Accept-Encoding","gzip");
+        //con.setRequestProperty("Host", "10.56.198.128:8443");
+        con.setRequestProperty("Content-type","application/json");
 
         return con;
     }
@@ -340,6 +344,22 @@ public class SdAvcConnector extends HttpsUriConnectionTrustAllServers {
     public String getConnectionResponse(HttpURLConnection conn) throws Exception {
         StringBuilder result = new StringBuilder();
         BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String line;
+        while ((line = rd.readLine()) != null) {
+            result.append(line);
+        }
+        rd.close();
+        return result.toString();
+    }
+
+    /**
+     * return response for given http connection
+     */
+    public String getConnectionResponseZip(HttpURLConnection conn) throws Exception {
+        StringBuilder result = new StringBuilder();
+        GZIPInputStream gzis = new GZIPInputStream(conn.getInputStream());
+        InputStreamReader reader = new InputStreamReader(gzis);
+        BufferedReader rd = new BufferedReader(reader);
         String line;
         while ((line = rd.readLine()) != null) {
             result.append(line);

@@ -1,9 +1,6 @@
 package com.cisco.te.shieldeye;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 import com.cisco.te.shieldeye.sdavc.client.model.*;
 import org.codehaus.plexus.util.ExceptionUtils;
@@ -66,7 +63,12 @@ public class SdavcSecurityService {
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
 					Anomalies anomalies = dcsDevice.getMetadata().getAnomalies();
-					List<AnomalyReduced> reducedAnomalies = ShieldEyeUtils.createReducedAnomalies(lastHit, anomalies, showSensitive);
+					List<AnomalyReduced> reducedAnomalies;
+					if(anomalies == null) {
+						reducedAnomalies = Collections.emptyList();
+					} else {
+						reducedAnomalies = ShieldEyeUtils.createReducedAnomalies(lastHit, anomalies, showSensitive);
+					}
 					deviceScanResult.add(reducedAnomalies);
 				}
 			}
