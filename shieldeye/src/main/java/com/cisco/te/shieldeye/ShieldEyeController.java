@@ -37,25 +37,21 @@ public class ShieldEyeController {
     private TeClient teClient;
 
     @GetMapping("/security-scan")
-    public SecurityScanResponse securityScan(@RequestParam(value = "segment", defaultValue = "apple") String segment, @RequestParam(value = "windowStart", defaultValue = "1686731700") Long windowStart, @RequestParam(value = "windowSize", defaultValue = "5") Integer windowSize, @RequestParam(value = "mock", defaultValue = "true") boolean isMock, @RequestParam(value = "targetIp", defaultValue = "") String targetIp) {
+    public SecurityScanResponse securityScan(@RequestParam(value = "segment", defaultValue = "apple") String segment, @RequestParam(value = "windowStart", defaultValue = "1686731700") Long windowStart, @RequestParam(value = "windowSize", defaultValue = "5") Integer windowSize, @RequestParam(value = "sd-mock", defaultValue = "true") boolean isMock, @RequestParam(value = "targetIp", defaultValue = "") String targetIp) {
         logger.info("Getting security scan for segment={}, windowStart={}, windowSize={}, targetIp={}", segment, windowStart, windowSize, targetIp);
-        logger.info("isMock: {}", isMock);
+        logger.info("isMock(sd-mock): {}", isMock);
         boolean showSensitiveData = false;
 
         List<Long> timeFrame = ShieldEyeUtils.getTimeFrame(windowStart, windowSize);
         long periodInMinutes = ShieldEyeUtils.getPeriodInMinutes(windowStart);
         logger.info("Period in min are: {}", periodInMinutes);
-        List<String> targetIps = new ArrayList<>();
-        if (targetIp.equals("")) {
-            targetIps = teClient.getTEtest(timeFrame);
-        } else {
-            targetIps.add(targetIp);
-        }
+        List<String> targetIps = teClient.getTEtest(timeFrame, targetIp);
         logger.info("Real - Potential servers are {}", targetIps);
         SecurityScanResponse scan;
         if (isMock) {
             logger.info("Mock - Potential servers are {}", targetIps);
             if (Instant.now().getEpochSecond()-windowStart<4*60*60){
+                logger.info("Empty respond. diff is {}",Instant.now().getEpochSecond()-windowStart);
                 return sdavcSecurityService.getEmptySecurityIssues();
             }
             scan = sdavcSecurityService.getSecurityIssuesMock(targetIps, segment, periodInMinutes, showSensitiveData, windowStart);

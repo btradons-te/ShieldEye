@@ -89,6 +89,7 @@ public class SdavcSecurityService {
 		SecurityScanResponse scanResponse = new SecurityScanResponse();
 		try {
 			List<DcsDevice> devices = ShieldEyeUtils.getMockedDevices();
+			System.out.println("dev->"+devices);
 			scanResponse.setStatus("Success");
 			Map<String, TargetScanResult> scanResultsPerDevice = new HashMap<>();
 			for (DcsDevice dcsDevice : devices) {
@@ -103,6 +104,7 @@ public class SdavcSecurityService {
 						scanResultsPerDevice.put(deviceIp, deviceScanResult);
 					}
 					Anomalies anomaliesRaw = dcsDevice.getMetadata().getAnomalies();
+					System.out.println("anomaliesRaw->" + anomaliesRaw);
 //					String lastHitTime = dcsDevice.getLastHitsTime();
 					long lastHitTime = ShieldEyeUtils.getRandomTimeFromStart(windowStart);
 					List<AnomalyReduced> anomalies = ShieldEyeUtils.createReducedAnomalies(lastHitTime, anomaliesRaw, showSensitive);

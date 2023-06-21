@@ -89,7 +89,7 @@ public class SdavcSecurityServiceTest {
 		assertEquals(res.getDetectedAnomalies().size(),2);
 
 		long twoMin = 2;
-		response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoMin, true, 1686731700);
+		response = sdavcSecurityService.getSecurityIssuesMock(targetIps, "apple", twoMin, true, 1687279454);
 		assertNotNull(response.getTargetScanResult());
 		 res = response.getTargetScanResult().stream().toList().get(0);
 		assertEquals(res.getDetectedAnomalies().size(),2);
